@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 function WoojinMain() {
-  return <h1>Hello world</h1>;
+  return <h1>Hello WoojinMain</h1>;
 }
 
 export default WoojinMain;

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 function HakjinLogin() {
-  return <h1>Hello world</h1>;
+  return <h1>Hello HakjinLogin</h1>;
 }
 
 export default HakjinLogin;

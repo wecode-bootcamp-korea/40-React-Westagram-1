@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-function JiinLogin() {
-  return <h1>Hello world</h1>;
+function JiinMain() {
+  return <h1>Hello JiinMain</h1>;
 }
 
-export default JiinLogin;
+export default JiinMain;
