@@ -1,21 +1,21 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // 곽민경의 컴포넌트
-import MinkyungLogin from "./pages/minkyung/Login/Login";
-import MinkyungMain from "./pages/minkyung/Main/Main";
+import MinkyungLogin from './pages/minkyung/Login/Login';
+import MinkyungMain from './pages/minkyung/Main/Main';
 
 // 임우진의 컴포넌트
-import WoojinLogin from "./pages/woojin/Login/Login";
-import WoojinMain from "./pages/woojin/Main/Main";
+import WoojinLogin from './pages/woojin/Login/Login';
+import WoojinMain from './pages/woojin/Main/Main';
 
 // 김학진의 컴포넌트
-import HakjinLogin from "./pages/hakjin/Login/Login";
-import HakjinMain from "./pages/hakjin/Main/Main";
+import HakjinLogin from './pages/hakjin/Login/Login';
+import HakjinMain from './pages/hakjin/Main/Main';
 
 // 임지인의 컴포넌트
-import JiinLogin from "./pages/jiin/Login/Login";
-import JiinMain from "./pages/jiin/Main/Main";
+import JiinLogin from './pages/jiin/Login/Login';
+import JiinMain from './pages/jiin/Main/Main';
 // import 한 컴포넌트에 대한 경로를 각각 설정해줍니다.
 const Router = () => {
   return (
