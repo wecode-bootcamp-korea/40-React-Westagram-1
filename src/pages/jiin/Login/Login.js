@@ -3,16 +3,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
-function NewLogin() {
-  return (
-    <div className="newLogin">
-      <h1 className="title">Login</h1>
-      <h2 className="article">Login Nesting</h2>
-      <h3 className="article_children">children</h3>
-    </div>
-  );
-}
-
 function Subject() {
   return <h1>Instagram</h1>;
 }
@@ -56,7 +46,6 @@ function JiinLogin() {
       <Subject />
       <UserBtn />
       <LostPassword />
-      <NewLogin />
     </form>
   );
 }

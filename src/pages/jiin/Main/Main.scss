@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.insta_gnb {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  .insta_logo {
+    display: flex;
+    justify-content: flex-start;
+    .nav_leftSide {
+      width: 30px;
+      height: 30px;
+      margin-right: 20px;
+      img {
+        width: 100%;
+      }
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Lobster', cursive;
+    }
+  }
+  .inputValue {
+    text-align: center;
+  }
+  .userProfile {
+    display: flex;
+    justify-content: center;
+    li {
+      width: 30px;
+      margin-right: 20px;
+    }
+    .clickProfile {
+      position: relative;
+      .clickProfileInfo {
+        display: none;
+        position: absolute;
+        top: 35px;
+        right: 0px;
+        background: #fff;
+        li {
+          padding: 8px 5px;
+          font-size: 12px;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+
+// .nav_leftSide .userProfile .clickProfileInfo .clickProfileInfo li:last-child {
+//   border-top: 1px solid #ddd;
+// }
+
+/* main */
+main {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  .feeds {
+    width: 500px;
+    border: 1px solid #ddd;
+    margin-right: 20px;
+    .feedTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 8px 8px 12px;
+      .feedTopLeft {
+        display: flex;
+        .feedTopImg {
+          width: 30px;
+          margin-right: 20px;
+          img {
+            width: 100%;
+            border-radius: 20px;
+          }
+        }
+        .feedTopUser {
+          p {
+            line-height: 30px;
+            font-size: 14px;
+          }
+        }
+      }
+      .feedTopRight {
+        .feedMore {
+          width: 24px;
+        }
+      }
+    }
+    .feedBottom {
+      padding: 20px;
+      .userClickSection {
+        display: flex;
+        justify-content: space-between;
+        div {
+          display: flex;
+          .BottomImg {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            :last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      .userWrite {
+        font-size: 14px;
+        .userProfileLike {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+          .insta_profileImg {
+            width: 30px;
+            margin-right: 8px;
+            img {
+              width: 100%;
+            }
+          }
+          .likeCountNum {
+            display: flex;
+            line-height: 30px;
+            margin-right: 10px;
+          }
+        }
+        .userWriting {
+          display: flex;
+          margin-top: 10px;
+          li {
+            .boldName {
+              font-weight: 600;
+              margin-right: 5px;
+            }
+          }
+        }
+        .followersWrite {
+          li {
+            .boldName {
+              font-weight: 600;
+              margin-right: 5px;
+            }
+            .heartAdd {
+              width: 15px;
+              img {
+                width: 100%;
+              }
+            }
+            .delete {
+              float: right;
+            }
+          }
+        }
+      }
+      .userComment {
+        display: flex;
+        margin-top: 40px;
+        input {
+          border: none;
+          background: none;
+        }
+        .commentPush {
+          width: 90%;
+        }
+        button {
+          border: none;
+          background: none;
+        }
+        .submitPush {
+          width: 10%;
+        }
+      }
+    }
+  }
+  .main-right {
+    width: 320px;
+    font-size: 14px;
+    .sideUserSection {
+      display: flex;
+      padding: 8px;
+      .sideUserImg {
+        overflow: hidden;
+        border-radius: 50%;
+        width: 45px;
+        margin-right: 10px;
+      }
+    }
+    .sideStory {
+      border: 1px solid #ddd;
+      .storySectionTitle {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+      }
+      .storySection {
+        overflow-y: scroll;
+        height: 220px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        li {
+          display: flex;
+          padding: 10px 15px;
+        }
+      }
+    }
+    .suggestionSection {
+      border: 1px solid #ddd;
+      margin-top: 20px;
+      li {
+        display: flex;
+        padding: 10px 15px;
+        &:first-child {
+          justify-content: space-between;
+        }
+        .suggestionFollow {
+          margin-left: 45px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .insta_gnb {
+    .inputValue {
+      margin: 0 10px;
+    }
+    .userProfile {
+      li {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  main {
+    flex-direction: column-reverse;
+    padding: 20px;
+    .feeds {
+      width: 100%;
+      margin-top: 20px;
+    }
+    .main-right {
+      display: flex;
+      width: 100%;
+      .sideUserSection {
+        display: block;
+        width: 20%;
+        word-break: break-all;
+        .sideUserImg {
+          margin: auto;
+        }
+        .sideUserName {
+          margin-top: 10px;
+          text-align: center;
+          span {
+            display: none;
+          }
+        }
+      }
+      .sideStory {
+        width: 80%;
+        border: none;
+        overflow-x: scroll;
+        .storySectionTitle {
+          display: none;
+        }
+        .storySection {
+          display: flex;
+          height: auto;
+          li {
+            display: block;
+            width: 30%;
+            padding: 8px;
+            word-wrap: break-word;
+            .storyImg {
+              margin: auto;
+            }
+            .sideUserName {
+              margin-top: 10px;
+              text-align: center;
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .suggestionSection {
+        display: none;
+      }
+    }
+  }
+}
