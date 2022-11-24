@@ -7,17 +7,17 @@ const MinkyungMain = () => {
       <div>
         <nav className="navigation">
           <div className="logo">
-            <img src="images/instagram.png" />
+            <img src="images/minkyung/instagram.png" />
             <span>westagram</span>
           </div>
           <div className="searchBar">
             <input className="searchText" type="text" placeholder="검색" />
           </div>
           <div className="rightSideIcons">
-            <img src="images/explore.png" alt="Explore" />
-            <img src="images/heart.png" alt="Heart" />
+            <img src="images/minkyung/explore.png" alt="Explore" />
+            <img src="images/minkyung/heart.png" alt="Heart" />
             <span>
-              <img src="images/profile.png" alt="Profile" />
+              <img src="images/minkyung/profile.png" alt="Profile" />
             </span>
           </div>
         </nav>
@@ -27,21 +27,24 @@ const MinkyungMain = () => {
         <div className="feeds">
           <div className="article">
             <div id="userIcon">
-              <img src="images/dog.jpg" alt="User Image" />
+              <img src="images/minkyung/dog.jpg" alt="User Image" />
               <div className="userName">cute_gyuri</div>
               <div className="moreInfo">...</div>
             </div>
             <div id="articleImage">
-              <img src="images/article.jpeg" alt="Article Image" />
+              <img src="images/minkyung/article.jpeg" alt="Article Image" />
             </div>
             <div className="feedReactions">
               <div className="feedRightIcons">
-                <img src="images/red_heart.png" alt="heart-icon" />
-                <img src="images/bubble-chat.png" alt="comment-icon" />
-                <img src="images/direct-instagram.png" alt="direct-message" />
+                <img src="images/minkyung/red_heart.png" alt="heart-icon" />
+                <img src="images/minkyung/bubble-chat.png" alt="comment-icon" />
+                <img
+                  src="images/minkyung/direct-instagram.png"
+                  alt="direct-message"
+                />
               </div>
               <span className="saveIcon">
-                <img src="images/save-instagram.png" />
+                <img src="images/minkyung/save-instagram.png" />
               </span>
             </div>
             <div className="feedReactExp">
@@ -75,14 +78,14 @@ const MinkyungMain = () => {
           <div className="personalProfile">
             <div className="dropdown">
               <span className="dropBtn">
-                <img src="images/dog.jpg" alt="profileImage" />
+                <img src="images/minkyung/dog.jpg" alt="profileImage" />
               </span>
               <ul class="dropdown-content">
                 <li href="#">
-                  <img src="images/user.png" />
+                  <img src="images/minkyung/user.png" />
                 </li>
                 <li href="#">
-                  <img src="images/save-instagram.png" />
+                  <img src="images/minkyung/save-instagram.png" />
                 </li>
                 <li href="#">
                   <img src="images/settings.png" />
@@ -101,7 +104,7 @@ const MinkyungMain = () => {
             </div>
             <ul className="storyPeople">
               <li className="storyContents">
-                <img alt="1st-profile" src="images/profile1.jpeg" />
+                <img alt="1st-profile" src="images/minkyung/profile1.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>r_u_running</strong>
                   <br />
@@ -109,7 +112,7 @@ const MinkyungMain = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="2nd-profile" src="images/profile2.jpeg" />
+                <img alt="2nd-profile" src="images/minkyung/profile2.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>cantdo_kendo</strong>
                   <br />
@@ -117,7 +120,7 @@ const MinkyungMain = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="3rd-profile" src="images/profile3.jpeg" />
+                <img alt="3rd-profile" src="images/minkyung/profile3.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>cat_ssg_win</strong>
                   <br />
@@ -125,7 +128,7 @@ const MinkyungMain = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="4th-profile" src="images/profile4.jpeg" />
+                <img alt="4th-profile" src="images/minkyung/profile4.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>chocooooooo</strong>
                   <br />
@@ -133,7 +136,7 @@ const MinkyungMain = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="5th-profile" src="images/profile5.jpeg" />
+                <img alt="5th-profile" src="images/minkyung/profile5.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>madoo_love</strong>
                   <br />
@@ -141,7 +144,7 @@ const MinkyungMain = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="6th-profile" src="images/profile6.jpeg" />
+                <img alt="6th-profile" src="images/minkyung/profile6.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>old_n_newyork</strong>
                   <br />
@@ -155,21 +158,21 @@ const MinkyungMain = () => {
               </div>
               <ul className="recommendationPeople">
                 <li className="storyContents">
-                  <img alt="7th-profile" src="images/profile7.jpeg" />
+                  <img alt="7th-profile" src="images/minkyung/profile7.jpeg" />
                   <strong>tuna_sushi</strong>
                   <br />
                   <p className="recoExp1">r_u_running님 외...</p>
                   {/* <span className="blueFollow">팔로우</span> */}
                 </li>
                 <li className="storyContents">
-                  <img alt="8th-profile" src="images/profile8.jpeg" />
+                  <img alt="8th-profile" src="images/minkyung/profile8.jpeg" />
                   <strong>ducklingduckduck</strong>
                   <br />
                   <p className="recoExp2">old_n_newyork님...</p>
                   {/* <span className="blueFollow">팔로우</span> */}
                 </li>
                 <li className="storyContents">
-                  <img alt="9th-profile" src="images/profile9.jpeg" />
+                  <img alt="9th-profile" src="images/minkyung/profile9.jpeg" />
                   <strong>5am_cafe</strong>
                   <br />
                   <p className="recoExp3">chocooooooo님 외 ...</p>

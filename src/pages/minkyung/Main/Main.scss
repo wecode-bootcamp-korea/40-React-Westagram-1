@@ -88,6 +88,8 @@ main {
     background-color: white;
     .feedArticle {
       margin-left: -130px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
     #articleImage img {
       width: 528px;
@@ -122,14 +124,14 @@ main {
   display: flex;
   flex-direction: row;
   img {
-    width: 30px;
+    width: 40px;
     padding-left: 15px;
     padding-top: 10px;
   }
   .saveIcon img {
-    width: 30px;
+    width: 40px;
     padding-top: 10px;
-    margin-left: 340px;
+    margin-left: 350px;
   }
 }
 
@@ -146,6 +148,7 @@ main {
     }
     .commentList {
       width: 300px;
+      margin-top: 10px;
       .commentId {
         font-weight: bold;
         margin-left: -240px;
@@ -154,7 +157,8 @@ main {
     }
   }
   .commentSpace {
-    margin-left: 10px;
+    margin-left: -20px;
+    margin-top: 10px;
     padding: 10px;
     width: 420px;
     border: none;
@@ -354,18 +358,24 @@ ul {
       color: black;
     }
   }
+  .recommendationPeople {
+    margin-top: 15px;
+  }
 }
 .recoExp1 {
-  margin-left: -55px;
+  margin-left: -60px;
+  margin-top: 15px;
   color: gray;
 }
 .recoExp2 {
   margin-left: -100px;
+  margin-top: 15px;
   color: gray;
 }
 
 .recoExp3 {
   margin-left: -50px;
+  margin-top: 15px;
   color: gray;
 }
 
