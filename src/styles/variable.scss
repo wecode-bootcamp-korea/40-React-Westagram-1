@@ -1,1 +1,14 @@
 $backgroundColor: green;
+$westaGray: rgb(219, 219, 219);
+$lightGray: rgb(250, 250, 250);
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexSort($justify, $alignItems) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $alignItems;
+}

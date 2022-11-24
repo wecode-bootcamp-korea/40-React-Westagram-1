@@ -1,23 +1,23 @@
 import React from 'react';
 import './Main.scss';
 
-const Main = () => {
+const MinkyungMain = () => {
   return (
     <>
       <div>
         <nav className="navigation">
           <div className="logo">
-            <img src="img/instagram.png" />
+            <img src="images/instagram.png" />
             <span>westagram</span>
           </div>
           <div className="searchBar">
             <input className="searchText" type="text" placeholder="검색" />
           </div>
           <div className="rightSideIcons">
-            <img src="img/explore.png" alt="Explore" />
-            <img src="img/heart.png" alt="Heart" />
+            <img src="images/explore.png" alt="Explore" />
+            <img src="images/heart.png" alt="Heart" />
             <span>
-              <img src="img/profile.png" alt="Profile" />
+              <img src="images/profile.png" alt="Profile" />
             </span>
           </div>
         </nav>
@@ -27,21 +27,21 @@ const Main = () => {
         <div className="feeds">
           <div className="article">
             <div id="userIcon">
-              <img src="img/dog.jpg" alt="User Image" />
+              <img src="images/dog.jpg" alt="User Image" />
               <div className="userName">cute_gyuri</div>
               <div className="moreInfo">...</div>
             </div>
             <div id="articleImage">
-              <img src="img/article.jpeg" alt="Article Image" />
+              <img src="images/article.jpeg" alt="Article Image" />
             </div>
             <div className="feedReactions">
               <div className="feedRightIcons">
-                <img src="img/red_heart.png" alt="heart-icon" />
-                <img src="img/bubble-chat.png" alt="comment-icon" />
-                <img src="img/direct-instagram.png" alt="direct-message" />
+                <img src="images/red_heart.png" alt="heart-icon" />
+                <img src="images/bubble-chat.png" alt="comment-icon" />
+                <img src="images/direct-instagram.png" alt="direct-message" />
               </div>
               <span className="saveIcon">
-                <img src="img/save-instagram.png" />
+                <img src="images/save-instagram.png" />
               </span>
             </div>
             <div className="feedReactExp">
@@ -75,17 +75,17 @@ const Main = () => {
           <div className="personalProfile">
             <div className="dropdown">
               <span className="dropBtn">
-                <img src="img/dog.jpg" alt="profileImage" />
+                <img src="images/dog.jpg" alt="profileImage" />
               </span>
               <ul class="dropdown-content">
                 <li href="#">
-                  <img src="img/user.png" />
+                  <img src="images/user.png" />
                 </li>
                 <li href="#">
-                  <img src="img/save-instagram.png" />
+                  <img src="images/save-instagram.png" />
                 </li>
                 <li href="#">
-                  <img src="img/settings.png" />
+                  <img src="images/settings.png" />
                 </li>
                 <li href="#">로그아웃</li>
               </ul>
@@ -101,7 +101,7 @@ const Main = () => {
             </div>
             <ul className="storyPeople">
               <li className="storyContents">
-                <img alt="1st-profile" src="img/profile1.jpeg" />
+                <img alt="1st-profile" src="images/profile1.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>r_u_running</strong>
                   <br />
@@ -109,7 +109,7 @@ const Main = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="2nd-profile" src="img/profile2.jpeg" />
+                <img alt="2nd-profile" src="images/profile2.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>cantdo_kendo</strong>
                   <br />
@@ -117,7 +117,7 @@ const Main = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="3rd-profile" src="img/profile3.jpeg" />
+                <img alt="3rd-profile" src="images/profile3.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>cat_ssg_win</strong>
                   <br />
@@ -125,7 +125,7 @@ const Main = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="4th-profile" src="img/profile4.jpeg" />
+                <img alt="4th-profile" src="images/profile4.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>chocooooooo</strong>
                   <br />
@@ -133,7 +133,7 @@ const Main = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="5th-profile" src="img/profile5.jpeg" />
+                <img alt="5th-profile" src="images/profile5.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>madoo_love</strong>
                   <br />
@@ -141,7 +141,7 @@ const Main = () => {
                 </div>
               </li>
               <li className="storyContents">
-                <img alt="6th-profile" src="img/profile6.jpeg" />
+                <img alt="6th-profile" src="images/profile6.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>old_n_newyork</strong>
                   <br />
@@ -155,21 +155,21 @@ const Main = () => {
               </div>
               <ul className="recommendationPeople">
                 <li className="storyContents">
-                  <img alt="7th-profile" src="img/profile7.jpeg" />
+                  <img alt="7th-profile" src="images/profile7.jpeg" />
                   <strong>tuna_sushi</strong>
                   <br />
                   <p className="recoExp1">r_u_running님 외...</p>
                   {/* <span className="blueFollow">팔로우</span> */}
                 </li>
                 <li className="storyContents">
-                  <img alt="8th-profile" src="img/profile8.jpeg" />
+                  <img alt="8th-profile" src="images/profile8.jpeg" />
                   <strong>ducklingduckduck</strong>
                   <br />
                   <p className="recoExp2">old_n_newyork님...</p>
                   {/* <span className="blueFollow">팔로우</span> */}
                 </li>
                 <li className="storyContents">
-                  <img alt="9th-profile" src="img/profile9.jpeg" />
+                  <img alt="9th-profile" src="images/profile9.jpeg" />
                   <strong>5am_cafe</strong>
                   <br />
                   <p className="recoExp3">chocooooooo님 외 ...</p>
@@ -190,4 +190,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MinkyungMain;

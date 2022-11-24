@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import '../../styles/variables.scss';
+@import '../../../styles/variable.scss';
 
 * {
   white-space: nowrap;
@@ -37,7 +37,7 @@
     margin-left: 15%;
     margin-top: 5px;
     input::-webkit-input-placeholder {
-      background-image: url('../../assets/img/search.png');
+      background-image: url('../../../assets/minkyung/search.png');
       background-size: contain;
       background-position: 1px center;
       background-repeat: no-repeat;
@@ -188,7 +188,7 @@ main {
   }
   input[type='checkbox'] + label {
     display: inline-block;
-    background-image: url(../../assets/img/heart.png);
+    background-image: url('../../../assets/minkyung/heart.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 12px;
@@ -196,7 +196,7 @@ main {
     cursor: pointer;
   }
   input[type='checkbox']:checked + label {
-    background-image: url(../../assets/img/red_heart.png);
+    background-image: url('../../../assets/minkyung/red_heart.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 12px;

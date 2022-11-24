@@ -3,7 +3,7 @@ import './Login.scss';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const MinkyungLogin = () => {
   const navigate = useNavigate();
 
   const goToMain = () => {
@@ -52,4 +52,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default MinkyungLogin;
