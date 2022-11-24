@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../styles/variables.scss';
+
+* {
+  white-space: nowrap;
+}
+
+/* navigation */
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  white-space: nowrap;
+  margin-top: 10px;
+  margin-left: 70px;
+  padding-bottom: 10px;
+  align-items: center;
+  img {
+    width: 30px;
+  }
+  .logo {
+    margin-left: 15px;
+    margin-top: -5px;
+    padding-left: 15px;
+    padding-top: -15px;
+    height: 35px;
+    span {
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 1.5px solid black;
+      font-size: 32px;
+      font-family: 'Lobster', cursive;
+    }
+  }
+  .searchBar {
+    margin-left: 15%;
+    margin-top: 5px;
+    input::-webkit-input-placeholder {
+      background-image: url('../../assets/img/search.png');
+      background-size: contain;
+      background-position: 1px center;
+      background-repeat: no-repeat;
+      text-align: center;
+      text-indent: 0;
+    }
+    .searchText {
+      padding: 4px;
+      width: 250px;
+      background-color: #fafafa;
+      border: solid 1px rgb(219, 219, 219);
+      border-radius: 5px;
+      font-size: 15px;
+      text-align: center;
+      color: black;
+    }
+  }
+  .rightSideIcons {
+    margin-left: 100px;
+    float: left;
+    img {
+      width: 25px;
+      margin: 10px;
+    }
+  }
+}
+
+.line {
+  border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+/* navigation 끝 */
+
+main {
+  display: grid;
+  grid-template-columns: 600px 300px;
+  column-gap: 30px;
+  background-color: #fafafa;
+  align-items: center;
+  justify-content: center;
+  /* feed */
+  .feeds {
+    height: 100%;
+    margin-top: 70px;
+    margin-left: 70px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 5px;
+    background-color: white;
+    .feedArticle {
+      margin-left: -130px;
+    }
+    #articleImage img {
+      width: 528px;
+    }
+    /* 유저 아이콘 */
+    #userIcon {
+      display: flex;
+      flex-direction: row;
+      img {
+        margin: 10px;
+        width: 35px;
+        border: 1px solid rgb(219, 219, 219);
+        border-radius: 50%;
+      }
+      .userName {
+        margin-left: 5px;
+        margin-top: 17px;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .moreInfo {
+        margin-top: 5px;
+        margin-left: 370px;
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+/* 피드 아이콘 */
+.feedReactions {
+  display: flex;
+  flex-direction: row;
+  img {
+    width: 30px;
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+  .saveIcon img {
+    width: 30px;
+    padding-top: 10px;
+    margin-left: 340px;
+  }
+}
+
+/* feed 끝 */
+/* 댓글 시작 */
+.user-comment {
+  .commentLine {
+    border-top: 1px solid rgb(199, 199, 199);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    ul li {
+      margin-left: 20px;
+      width: 500px;
+    }
+    .commentList {
+      width: 300px;
+      .commentId {
+        font-weight: bold;
+        margin-left: -240px;
+        margin-right: 7px;
+      }
+    }
+  }
+  .commentSpace {
+    margin-left: 10px;
+    padding: 10px;
+    width: 420px;
+    border: none;
+  }
+  .commentBtn {
+    margin-left: 20px;
+    border: none;
+    background: none;
+    color: rgba(0, 149, 246);
+    font-weight: bold;
+  }
+}
+
+.delete {
+  float: right;
+  margin-top: -10px;
+  margin-right: -20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.heartBtn {
+  float: right;
+  margin-top: -19px;
+  margin-right: 40px;
+  cursor: pointer;
+  border: none;
+  input[type='checkbox'] {
+    display: none;
+  }
+  input[type='checkbox'] + label {
+    display: inline-block;
+    background-image: url(../../assets/img/heart.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+  }
+  input[type='checkbox']:checked + label {
+    background-image: url(../../assets/img/red_heart.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+  }
+}
+
+/* .redBtn {
+  float: right;
+  margin-top: -16px;
+  margin-right: 40px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  border: none;
+  background-image: url(../img/red_heart.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+*/
+
+/* main-right 시작 */
+/* profile */
+.main-right {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: -80px;
+  .personalProfile {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    img {
+      width: 45px;
+      border: 1px solid rgb(219, 219, 219);
+      border-radius: 50%;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        width: 10em;
+        height: 10em;
+        img {
+          border-radius: 0%;
+          border: none;
+        }
+        a {
+          display: block;
+        }
+        &:hover {
+          display: block;
+        }
+      }
+    }
+  }
+  .personalId {
+    margin-left: 15px;
+    margin-top: 7px;
+    font-size: 14px;
+    font-weight: bold;
+
+    #personalName {
+      font-weight: 400;
+      color: #999999;
+    }
+  }
+}
+
+/* story */
+
+.story {
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  background-color: white;
+  .storyBar {
+    padding: 10px;
+    font-size: 12px;
+    color: #999999;
+  }
+  span {
+    margin-left: 160px;
+    font-weight: bold;
+    color: black;
+  }
+  .storyPeople {
+    overflow: auto;
+  }
+}
+
+.storyContents {
+  display: flex;
+  flex-direction: row;
+  margin: 1px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  img {
+    margin-left: 10px;
+    padding: 3px;
+    width: 30px;
+    border-radius: 50%;
+  }
+}
+
+.storyPeople .storyContents img {
+  position: relative;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to right, rgb(255, 0, 187) 0%, orange 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.ProfilesInfo {
+  margin-top: 5px;
+  margin-left: 10px;
+  padding-right: 30px;
+  color: #999999;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  strong {
+    color: black;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+/*recommendation*/
+
+.recommendation {
+  height: 200px;
+  margin-top: 20px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  background-color: white;
+  .recommendationBar {
+    font-size: 12px;
+    padding: 10px;
+    color: #999999;
+    .everyone {
+      margin-left: 100px;
+      font-weight: bold;
+      color: black;
+    }
+  }
+}
+.recoExp1 {
+  margin-left: -55px;
+  color: gray;
+}
+.recoExp2 {
+  margin-left: -100px;
+  color: gray;
+}
+
+.recoExp3 {
+  margin-left: -50px;
+  color: gray;
+}
+
+// .blueFollow {
+//   margin-top: 8px;
+//   margin-left: -105px;
+//   color: #549bf6;
+// }
+.contract {
+  margin: 10px;
+  color: rgb(199, 199, 199);
+  font-size: 12px;
+}
+
+/* 미디어 쿼리 */
+@media only screen and (max-width: 50em) {
+  main {
+    @include flex;
+    .main-right {
+      display: none;
+    }
+  }
+} ;
