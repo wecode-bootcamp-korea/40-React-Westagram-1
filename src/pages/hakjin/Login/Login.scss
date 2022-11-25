@@ -41,7 +41,6 @@
       padding: auto;
       margin: auto;
 
-      background-color: #00aaff;
       color: white;
 
       text-align: center;
@@ -50,6 +49,10 @@
 
     #button.able {
       background-color: #3364be;
+    }
+
+    #button.disable {
+      background-color: #00aaff;
     }
   }
 

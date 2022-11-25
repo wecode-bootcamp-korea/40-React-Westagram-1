@@ -87,7 +87,7 @@ function HakjinMain() {
         {/* <!-- 오른쪽 프로필 --> */}
         <div className="right">
           <div id="main-right">
-            <Link className="logout" to="../Login/Login.js">
+            <Link className="logout" to="/login-hakjin">
               로그아웃
             </Link>
             <div id="right_profile">

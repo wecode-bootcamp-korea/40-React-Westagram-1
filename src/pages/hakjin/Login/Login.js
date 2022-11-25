@@ -5,14 +5,21 @@ import { useState } from 'react';
 
 function HakjinLogin() {
   const navigate = useNavigate();
-  const [state, setState] = useState('');
+
+  const [id, setid] = useState('');
   const saveUserid = e => {
+    setid(e.target.value);
     console.log(e.target.value);
   };
 
+  const [pw, setpw] = useState('');
   const saveUserpw = e => {
+    setpw(e.target.value);
     console.log(e.target.value);
   };
+  const buttonUse = id.includes('@') && pw.length >= 5;
+  const buttonAble = buttonUse ? false : true;
+  const buttonColor = buttonUse ? 'able' : 'disable';
   return (
     <div className="login">
       <p id="logo">westagram</p>
@@ -33,11 +40,12 @@ function HakjinLogin() {
           placeholder="비밀번호"
         />
         <button
+          id="button"
+          disabled={buttonAble}
+          className={buttonColor}
           onClick={() => {
             navigate('/main-hakjin');
           }}
-          id="button"
-          /*disabled*/
         >
           로그인
         </button>
