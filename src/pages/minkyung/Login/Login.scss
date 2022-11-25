@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import '../../../styles/variable.scss';
-
+@import '../Login/variables.scss';
 main {
   @include flex;
   width: 100vw;

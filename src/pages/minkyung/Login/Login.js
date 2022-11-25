@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const MinkyungLogin = () => {
   const navigate = useNavigate();
-
   const goToMain = () => {
-    navigate('/Main');
+    navigate('/minkyung-main');
   };
 
   return (
@@ -30,7 +29,7 @@ const MinkyungLogin = () => {
               placeholder="&nbsp; 비밀번호"
             />
             <div className="validLogin">
-              <Link to="/Main">
+              <Link to="/main-minkyung">
                 <button
                   type="button"
                   id="login_btn"
