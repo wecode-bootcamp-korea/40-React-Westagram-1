@@ -8,6 +8,17 @@ const MinkyungLogin = () => {
   const goToMain = () => {
     navigate('/minkyung-main');
   };
+  const [state, setState] = useState();
+
+  const saveUserId = event => {
+    const userId = event.target.value;
+    console.log(userId);
+  };
+
+  const saveUserPw = event => {
+    const userPw = event.target.value;
+    console.log(event.target.value);
+  };
 
   return (
     <body className="wrap">
@@ -21,12 +32,14 @@ const MinkyungLogin = () => {
               type="text"
               id="user-id"
               placeholder="&nbsp; 전화번호, 사용자 이름 또는 이메일"
+              onChange={saveUserId}
             />
             <br />
             <input
               type="password"
               id="user-password"
               placeholder="&nbsp; 비밀번호"
+              onChange={saveUserPw}
             />
             <div className="validLogin">
               <Link to="/main-minkyung">
