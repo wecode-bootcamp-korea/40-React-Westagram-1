@@ -49,9 +49,24 @@ main {
     }
   }
   .validLogin {
-    #login_btn {
+    .login_btn {
       background-color: rgba(0, 149, 246);
       opacity: 0.5;
+      height: 50px;
+      width: 500px;
+      padding: 5px;
+      margin-top: 30px;
+      margin-bottom: 120px;
+      margin-right: 50px;
+      border: 1px solid $lightGray;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 22px;
+      color: white;
+    }
+    .login_btn_blue {
+      background-color: rgba(0, 149, 246);
+      opacity: 1;
       height: 50px;
       width: 500px;
       padding: 5px;
