@@ -1,0 +1,63 @@
+.navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(219, 219, 219);
+
+  .navImages {
+    width: 24px;
+    height: 24px;
+  }
+
+  .navButton {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  /* left section of navigator */
+  .navLeftSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0 15px 50px;
+
+    .WestagramTitle {
+      margin: 0;
+      color: black;
+      font-size: 30px;
+      font-weight: lighter;
+      font-family: 'Lobster', cursive;
+      transform: scale(0.8, 1);
+      text-decoration: none;
+    }
+  }
+
+  .navMiddleSection {
+    .searchBar {
+      width: 200px;
+      height: 29px;
+      border: 1px solid rgba(219, 219, 219);
+      border-radius: 3px;
+      background-color: transparent;
+      text-align: center;
+
+      &::-webkit-input-placeholder {
+        background-image: url('../../assets/Nav/magnifier.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 35%;
+      }
+    }
+  }
+
+  .navRightSection {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 50px 15px 0;
+
+    .navButton {
+      margin: 0 10px;
+    }
+  }
+}
