@@ -1,7 +1,18 @@
-import React, { useState } from 'react'; // react의 내장 hook인 {useState}
+import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
+
+// function PracticeLogin() {
+//   let [color, setColor] = useState('red');
+
+//   return (
+//     <>
+//       <h1 style={{ backgroundColor: color }}>여기는 메인 페이지입니다.</h1>
+//       <button onClick={() => setColor('blue')}>배경색 변경</button>
+//     </>
+//   );
+// }
 
 function Subject() {
   return <h1>Instagram</h1>;
@@ -10,24 +21,30 @@ function Subject() {
 function UserBtn() {
   const navigate = useNavigate();
 
-  const [userIdValue, setUserIdValue] = useState('');
-  const [userPwValue, setUserPwValue] = useState('');
-
-  const getUserIdValue = e => {
-    setUserIdValue(e.target.value);
+  const [inputValue, setInputValue] = useState({ userid: ' ', userpw: ' ' });
+  console.log(inputValue);
+  const onChangeT = e => {
+    console.log(inputValue);
+    console.log(e);
+    setInputValue({ ...inputValue, [e.target.name]: e.target.value });
   };
 
-  const getUserPwValue = e => {
-    setUserPwValue(e.target.value);
+  const onClickBtn = e => {
+    if (inputValue.userid.indexOf('@') > -1) {
+      if (inputValue.userpw.length >= 5) {
+        return MoveMain();
+      } else if (inputValue.userpw.length < 5) {
+        alert('비밀번호를 다시 확인해주세요');
+      }
+    } else if (inputValue.userid.indexOf('@') === -1) {
+      alert('아이디를 다시 확인해주세요');
+      if (inputValue.userpw.length < 5) {
+        alert('비밀번호를 다시 확인해주세요');
+      }
+    }
   };
 
-  const changeColor = userIdValue.includes('@') && userPwValue.length >= 5;
-
-  const buttonColor = changeColor ? 'active' : 'un_active';
-  const disabledOn = changeColor ? false : true;
-
-  //main으로 이동
-  const moveMain = e => {
+  const MoveMain = e => {
     navigate('/main-jiin');
   };
 
@@ -35,31 +52,35 @@ function UserBtn() {
     <div className="userButton">
       <input
         id="userIdValue"
+        name="userid"
         type="text"
-        // value={userIdValue.userId}
         placeholder="전화번호, 사용자 이름 또는 이메일"
-        onChange={getUserIdValue}
+        value={inputValue.userid}
+        onChange={onChangeT}
       />
       <input
         id="userPwValue"
+        name="userpw"
         type="password"
-        // value={userPwValue.userPw}
+        value={inputValue.userpw}
+        onChange={onChangeT}
         placeholder="비밀번호"
-        onChange={getUserPwValue}
       />
       {/* <button id="userBtn" type="submit">
-        <Link to="/Main">
+        <Link to="/main-jiin">
           <p>로그인</p>
         </Link>
       </button> */}
-      <button
+      {/* <button
         id="userBtn"
         type="submit"
-        disabled={disabledOn}
-        onChange={changeColor}
-        className={buttonColor}
-        onClick={moveMain}
+        onClick={() => {
+          
+        }}
       >
+        <p>로그인</p>
+      </button> */}
+      <button id="userBtn" type="submit" onClick={onClickBtn}>
         <p>로그인</p>
       </button>
     </div>

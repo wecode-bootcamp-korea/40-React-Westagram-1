@@ -15,6 +15,7 @@ import HakjinMain from './pages/hakjin/Main/Main';
 
 // 임지인의 컴포넌트
 import JiinLogin from './pages/jiin/Login/Login';
+// import JiinLogin from './pages/jiin/Login/Login2';
 import JiinMain from './pages/jiin/Main/Main';
 // import 한 컴포넌트에 대한 경로를 각각 설정해줍니다.
 const Router = () => {

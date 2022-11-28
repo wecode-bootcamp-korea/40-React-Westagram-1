@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
+// import images from './bookmark.png';
+
+// const Main = () => {
+
+//   return (
+//     <>
+//     <h1>여기는 메인 페이지 입니다.</h1>
+//     </>
+//   );
+// };
+// export default Main;
 
 function InstaGnb() {
   return (
     <nav className="insta_gnb">
       <div className="insta_logo">
         <div className="nav_leftSide">
-          <img src="../../../assets/jiin/instagram.png" alt="instagram" />
+          <img src="./images/jiin/instagram.png" alt="instagram" />
         </div>
         <h1>Instagram</h1>
       </div>
       <input className="inputValue" type="text" placeholder="검색" />
       <ul className="userProfile">
         <li>
-          <img src="images/explore.png" alt="explore" />
+          <img src="./images/jiin/explore.png" alt="explore" />
         </li>
         <li>
-          <img src="images/heart.png" alt="heart" />
+          <img src="./images/jiin/heart.png" alt="heart" />
         </li>
         <li className="clickProfile">
-          <img src="images/profile.png" alt="profile" />
+          <img src="./images/jiin/profile.png" alt="profile" />
           <ul className="clickProfileInfo">
             <li>
               <a href=" ">프로필</a>
@@ -40,87 +51,122 @@ function InstaGnb() {
   );
 }
 
+function FeedTop() {
+  return (
+    <div className="feedTop">
+      <div className="feedTopLeft">
+        <div className="feedTopImg">
+          <img src="./images/jiin/insta_profile.png" alt="userImg" />
+        </div>
+        <div className="feedTopUser">
+          <p>wecode_bootcamp</p>
+        </div>
+      </div>
+      <div className="feedTopRight">
+        <div className="feedMore">
+          <img src="./images/jiin/more.png" alt="더보기" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FeedMain() {
+  return (
+    <div className="feedMain">
+      <img src="./images/jiin/insta_profile.png" alt="main profile" />
+    </div>
+  );
+}
+
+function FeedBottom() {
+  const [account, setAccount] = useState('');
+
+  const newAccount = () => {
+    return (
+      <li>
+        <span className="boldName">neceosecius</span>
+        <span>ok🤟👉🥰⚡✍️</span>
+        {/* <span className="heartAdd"></span>
+  <span className="delete"></span> */}
+      </li>
+    );
+  };
+  return (
+    <div className="feedBottom">
+      <div className="userClickSection">
+        <div>
+          <div className="userLike BottomImg">
+            <img src="./images/jiin/heart.png" alt="heart" />
+          </div>
+          <div className="chat BottomImg">
+            <img src="./images/jiin/chat.png" alt="chat" />
+          </div>
+          <div className="userShare BottomImg">
+            <img src="./images/jiin/upload.png" alt="share" />
+          </div>
+        </div>
+        <div className="userBookmarkSection">
+          <div className="userBookmark BottomImg">
+            <img src="./images/jiin/bookmark.png" alt="bookmark" />
+          </div>
+        </div>
+      </div>
+      <div className="userWrite">
+        <div className="userProfileLike">
+          <div className="insta_profileImg">
+            <img src="./images/jiin/insta_profile.png" alt="insta_profile" />
+          </div>
+          <div className="likeCountNum">
+            aineworld님 외 <div className="name"> 0 </div> 명이 좋아합니다
+          </div>
+        </div>
+        <ul className="userWriting">
+          <li>
+            <span className="boldName">canon_mj</span>
+            <span>
+              위워크에서 진행한 베이킹 클래스...
+              <a href=" " className="grey">
+                더보기
+              </a>
+            </span>
+          </li>
+        </ul>
+        <ul className="followersWrite">
+          <li>
+            <span className="boldName">neceosecius</span>
+            <span>ok🤟👉🥰⚡✍️</span>
+            {/* <span className="heartAdd"></span>
+        <span className="delete"></span> */}
+          </li>
+        </ul>
+      </div>
+      <div className="userComment">
+        <input
+          className="commentPush grey"
+          type="text"
+          placeholder="댓글 달기..."
+          onChange={e => {
+            setAccount(e.target.value);
+            let newAccount = [...account];
+            newAccount = setAccount;
+          }}
+        />
+        <button className="submitPush" type="submit" onClick={newAccount}>
+          게시
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Feed() {
   return (
     <div className="feeds">
       <article>
-        <div className="feedTop">
-          <div className="feedTopLeft">
-            <div className="feedTopImg">
-              <img src="images/insta_profile.png" alt="userImg" />
-            </div>
-            <div className="feedTopUser">
-              <p>wecode_bootcamp</p>
-            </div>
-          </div>
-          <div className="feedTopRight">
-            <div className="feedMore">
-              <img src="images/more.png" alt="더보기" />
-            </div>
-          </div>
-        </div>
-        <div className="feedMain">
-          <img src="images/insta_profile.png" alt="main profile" />
-        </div>
-        <div className="feedBottom">
-          <div className="userClickSection">
-            <div>
-              <div className="userLike BottomImg">
-                <img src="images/heart.png" alt="heart" />
-              </div>
-              <div className="chat BottomImg">
-                <img src="images/chat.png" alt="chat" />
-              </div>
-              <div className="userShare BottomImg">
-                <img src="images/upload.png" alt="share" />
-              </div>
-            </div>
-            <div className="userBookmarkSection">
-              <div className="userBookmark BottomImg">
-                <img src="images/bookmark.png" alt="bookmark" />
-              </div>
-            </div>
-          </div>
-          <div className="userWrite">
-            <div className="userProfileLike">
-              <div className="insta_profileImg">
-                <img src="images/insta_profile.png" alt="insta_profile" />
-              </div>
-              <div className="likeCountNum">
-                aineworld님 외 <div className="name">0</div>명이 좋아합니다
-              </div>
-            </div>
-            <ul className="userWriting">
-              <li>
-                <span className="boldName">canon_mj</span>
-                <span>
-                  위워크에서 진행한 베이킹 클래스...
-                  <a href=" " className="grey">
-                    더보기
-                  </a>
-                </span>
-              </li>
-            </ul>
-            <ul className="followersWrite">
-              <li>
-                <span className="boldName">neceosecius</span>
-                <span>ok🤟👉🥰⚡✍️</span>
-                {/* <span className="heartAdd"></span>
-                <span className="delete"></span> */}
-              </li>
-            </ul>
-          </div>
-          <div className="userComment">
-            <input
-              className="commentPush grey"
-              type="text"
-              placeholder="댓글 달기..."
-            />
-            <button className="submitPush" type="submit">
-              게시
-            </button>
-          </div>
-        </div>
+        <FeedTop />
+        <FeedMain />
+        <FeedBottom />
       </article>
     </div>
   );
@@ -131,7 +177,7 @@ function MainRight() {
     <div className="main-right">
       <div className="sideUserSection">
         <div className="sideUserImg customImg">
-          <img src="images/insta_profile.png" alt="profile" />
+          <img src="./images/jiin/insta_profile.png" alt="profile" />
         </div>
         <div className="sideUserName">
           <p>wecode_bootcamp</p>
@@ -154,7 +200,7 @@ function MainRight() {
         <ul className="storySection">
           <li>
             <div className="storyImg customImg">
-              <img src="images/insta_profile.png" alt="profile1" />
+              <img src="./images/jiin/insta_profile.png" alt="profile1" />
             </div>
             <div className="sideUserName">
               <p>wecode_bootcamp</p>
@@ -163,7 +209,7 @@ function MainRight() {
           </li>
           <li>
             <div className="storyImg customImg">
-              <img src="images/insta_profile.png" alt="profile2" />
+              <img src="./images/jiin/insta_profile.png" alt="profile2" />
             </div>
             <div className="sideUserName">
               <p>wecode_bootcamp</p>
@@ -172,7 +218,7 @@ function MainRight() {
           </li>
           <li>
             <div className="storyImg customImg">
-              <img src="images/insta_profile.png" alt="profile3" />
+              <img src="./images/jiin/insta_profile.png" alt="profile3" />
             </div>
             <div className="sideUserName">
               <p>wecode_bootcamp</p>
@@ -181,7 +227,7 @@ function MainRight() {
           </li>
           <li>
             <div className="storyImg customImg">
-              <img src="images/insta_profile.png" alt="profile4" />
+              <img src="./images/jiin/insta_profile.png" alt="profile4" />
             </div>
             <div className="sideUserName">
               <p>wecode_bootcamp</p>
@@ -190,7 +236,7 @@ function MainRight() {
           </li>
           <li>
             <div className="storyImg customImg">
-              <img src="images/insta_profile.png" alt="profile4" />
+              <img src="./images/jiin/insta_profile.png" alt="profile4" />
             </div>
             <div className="sideUserName">
               <p>wecode_bootcamp</p>
@@ -214,7 +260,7 @@ function MainRight() {
         </li>
         <li>
           <div className="suggestionImg customImg">
-            <img src="images/insta_profile.png" alt="profile1" />
+            <img src="./images/jiin/insta_profile.png" alt="profile1" />
           </div>
           <div className="sideUserName">
             <p>wecode_bootcamp</p>
@@ -228,7 +274,7 @@ function MainRight() {
         </li>
         <li>
           <div className="suggestionImg customImg">
-            <img src="images/insta_profile.png" alt="profile2" />
+            <img src="./images/jiin/insta_profile.png" alt="profile2" />
           </div>
           <div className="sideUserName">
             <p>wecode_bootcamp</p>
@@ -242,7 +288,7 @@ function MainRight() {
         </li>
         <li>
           <div className="suggestionImg customImg">
-            <img src="images/insta_profile.png" alt="profile3" />
+            <img src="./images/jiin/insta_profile.png" alt="profile3" />
           </div>
           <div className="sideUserName">
             <p>wecode_bootcamp</p>
