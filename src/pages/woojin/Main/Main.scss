@@ -298,6 +298,10 @@ button {
           size: $sub-font-size;
           weight: $bold-font-weight;
         }
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }  
@@ -405,6 +409,10 @@ button {
         font: {
           size: $sub-font-size;
           weight: $bold-font-weight;
+        }
+
+        &:hover {
+          cursor: pointer;
         }
       }
     }

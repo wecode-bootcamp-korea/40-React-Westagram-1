@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LineOfComment from './LineOfComment';
 
 function Comments() {
   const [text, setText] = useState('');
@@ -37,12 +38,7 @@ function Comments() {
     <>
       <section>
         <ul className="commentListSection">
-          {list.map((list, i) => (
-            <li key={i}>
-              <span className="profileNameForm">{list.id}</span>
-              {list.content}
-            </li>
-          ))}
+          <LineOfComment list={list} />
         </ul>
       </section>
       <div className="uploadDate">1일 전</div>
