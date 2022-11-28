@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
+  // navigate to main from login page
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/main-woojin');
   };
 
+  // set state email, password
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // save state
   const saveUserId = event => {
     setEmail(event.target.value);
   };
@@ -18,9 +21,11 @@ function LoginForm() {
     setPassword(event.target.value);
   };
 
+  // button validation
   const conditionOfInput = email.indexOf('@') && password.length >= 5;
   let classOfButton = conditionOfInput ? 'active' : null;
 
+  // set alert when values wrong
   const contentsOfAlert = {
     noId: '이메일을 입력해주세요',
     reId: '올바른 이메일 주소가 아닙니다.',
@@ -44,6 +49,7 @@ function LoginForm() {
     }
   };
 
+  // JSX
   return (
     <>
       <input
