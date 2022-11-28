@@ -1,0 +1,62 @@
+/* font_size */
+$main_font_size: 14px;
+$sub_font_size: 12px;
+$date_font_size: 10px;
+
+$login_logo_size: 42px;
+$main_logo_size: 30px;
+
+/* font_weight */
+$bold_font_weight: 600;
+$normal_font_weight:400; /* default */
+
+/* color */
+$main_box_border_color: rgba(219, 219, 219);
+$input_background_color: rgba(0, 0, 0, 0.047);
+$input_placeholder_color: rgba(0, 0, 0, 0.199);
+$button_blue_color: rgb(0, 149, 246);
+$main_text_color: rgb(38, 38, 38);
+$sub_text_color: rgba(142, 142, 142);
+$facebook_link_color: #385185;
+$search_password_color: rgb(0, 55, 107);
+$main_button_background_color: transparent;
+$main_info_letter_color: rgb(199, 199, 199);
+
+/* border */
+$main_box_border: 1px solid $main_box_border_color;
+
+/* set images size */
+@mixin setSize($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+/* display flex */
+@mixin flexRawWithoutCenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexRawCenter {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flexBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin westagramLogo {
+    font-family: 'Lobster', cursive;
+    font-weight: lighter;
+    transform: scale(0.8, 1);
+}
