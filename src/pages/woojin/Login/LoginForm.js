@@ -35,11 +35,11 @@ function LoginForm() {
   };
 
   const eventAlert = () => {
-    if (email.length == 0) {
+    if (email.length === 0) {
       alert(contentsOfAlert.noId);
-    } else if (email.indexOf('@') == -1) {
+    } else if (email.indexOf('@') === -1) {
       alert(contentsOfAlert.reId);
-    } else if (password.length == 0) {
+    } else if (password.length === 0) {
       alert(contentsOfAlert.noPw);
     } else if (password.length < 5) {
       alert(contentsOfAlert.rePw);

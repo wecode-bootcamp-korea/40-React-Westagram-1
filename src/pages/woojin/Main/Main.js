@@ -1,5 +1,6 @@
 import React from 'react';
 import './Main.scss';
+import Comments from './Comments';
 
 function WoojinMain() {
   return (
@@ -122,27 +123,7 @@ function WoojinMain() {
             <span className="seeMoreContent">... 더 보기</span>
           </section>
           {/* article - hidden section for posted comments */}
-          <section>
-            <ul className="commentListSection"></ul>
-          </section>
-          {/* article - uploaded date */}
-          <div className="uploadDate">1일 전</div>
-          {/* article - to write new comments input */}
-          <section className="commentSection">
-            <img
-              className="commentEmoji"
-              alt="emoji icon for comments"
-              src="/images/woojin/MainLayout/smile.png"
-            />
-            <div>
-              <input
-                className="addCommentText"
-                type="text"
-                placeholder="댓글 달기..."
-              />
-            </div>
-            <button className="addCommentButton">게시</button>
-          </section>
+          <Comments />
           {/* end of article */}
         </article>
         {/* main-right section */}
@@ -267,7 +248,7 @@ function WoojinMain() {
             </div>
 
             <div className="cellOfAside">
-              <div className="@">
+              <div className="flexRaw">
                 <a href="">
                   <img
                     className="profileImageForm"
