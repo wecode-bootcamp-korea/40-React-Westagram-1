@@ -15,10 +15,16 @@ function Comments() {
     setList([...list, { id: 'woojin', content: text }]);
   };
 
+  // check exist of text in input field
+  const checkExistText = () => {
+    const check = text.length > 0 ? addCommentClickEvent() : null;
+    return check;
+  };
+
   // add keydown event(enter key) for upload comments
   const addCommentKeydownEvent = event => {
     if (event.keyCode === 13) {
-      addCommentClickEvent();
+      checkExistText();
     }
   };
 
@@ -56,7 +62,7 @@ function Comments() {
             onKeyDown={addCommentKeydownEvent}
           />
         </div>
-        <button className={postButtonActive} onClick={addCommentClickEvent}>
+        <button className={postButtonActive} onClick={checkExistText}>
           게시
         </button>
       </section>

@@ -250,6 +250,10 @@ button {
 
         &.active {
           opacity: 1;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
