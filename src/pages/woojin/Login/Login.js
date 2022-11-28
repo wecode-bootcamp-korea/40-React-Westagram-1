@@ -11,9 +11,9 @@ function WoojinLogin() {
         <form>
           <LoginForm />
           <div id="divisionSection">
-            <div className="divisionLine"></div>
+            <div className="divisionLine" />
             <span id="divisionText">또는</span>
-            <div className="divisionLine"></div>
+            <div className="divisionLine" />
           </div>
           <div>
             <a href=" " id="facebookLink">
