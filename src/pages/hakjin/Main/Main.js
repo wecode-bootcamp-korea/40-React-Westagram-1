@@ -2,6 +2,7 @@ import React from 'react';
 import './Main.scss';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import CommentList from './Component';
 
 function HakjinMain() {
   const [userName] = useState('friends');
@@ -15,16 +16,6 @@ function HakjinMain() {
     setFeedComments(copyFeedComments);
     setComment('');
     e.preventDefault();
-  };
-
-  const CommentList = props => {
-    return (
-      <div className="userCommentBox">
-        <p className="userName">{props.userName}</p>
-        <div className="userComment">{props.userComment}</div>
-        <p className="userHeart" />
-      </div>
-    );
   };
 
   return (
