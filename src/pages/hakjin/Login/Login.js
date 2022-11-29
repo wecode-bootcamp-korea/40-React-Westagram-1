@@ -9,13 +9,13 @@ function HakjinLogin() {
   const [id, setid] = useState('');
   const saveUserid = e => {
     setid(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   const [pw, setpw] = useState('');
   const saveUserpw = e => {
     setpw(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
   const buttonUse = id.includes('@') && pw.length >= 5;
   const buttonAble = buttonUse ? false : true;

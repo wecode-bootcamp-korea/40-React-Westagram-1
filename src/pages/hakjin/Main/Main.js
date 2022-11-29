@@ -1,8 +1,32 @@
 import React from 'react';
 import './Main.scss';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function HakjinMain() {
+  const [userName] = useState('friends');
+  const [comment, setComment] = useState('');
+  const [feedComments, setFeedComments] = useState([]);
+  const [isValid, setIsValid] = useState(false);
+
+  const post = e => {
+    const copyFeedComments = [...feedComments];
+    copyFeedComments.push(comment);
+    setFeedComments(copyFeedComments);
+    setComment('');
+    e.preventDefault();
+  };
+
+  const CommentList = props => {
+    return (
+      <div className="userCommentBox">
+        <p className="userName">{props.userName}</p>
+        <div className="userComment">{props.userComment}</div>
+        <p className="userHeart" />
+      </div>
+    );
+  };
+
   return (
     <>
       <nav className="header">
@@ -73,14 +97,43 @@ function HakjinMain() {
               <b>acorn</b>님<b>외 4명</b>이 좋아합니다
             </p>
             <p className="mention">metamro "첫 시작인만큼 빠르게 도착!"</p>
-            <div className="comment_box" />
+            {feedComments.map((commentArr, i) => {
+              return (
+                <CommentList
+                  userName={userName}
+                  userComment={commentArr}
+                  key={i}
+                />
+              );
+            })}
+            {/* 댓글창 */}
             <div className="comment_bar">
-              <input
-                className="ripple_bar"
-                type="text"
-                placeholder="댓글 달기..."
-              />
-              <button className="ripple_button">게시</button>
+              <form onSubmit={post}>
+                <input
+                  type="text"
+                  className="ripple_bar"
+                  placeholder="댓글 달기..."
+                  onChange={e => {
+                    setComment(e.target.value);
+                  }}
+                  onKeyUp={e => {
+                    e.target.value.length > 0
+                      ? setIsValid(true)
+                      : setIsValid(false);
+                  }}
+                  value={comment}
+                />
+                <button
+                  className={
+                    comment.length > 0
+                      ? 'ripple_button_on'
+                      : 'ripple_button_off'
+                  }
+                  disabled={isValid ? false : true}
+                >
+                  게시
+                </button>
+              </form>
             </div>
           </article>
         </div>

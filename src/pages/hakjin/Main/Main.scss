@@ -164,8 +164,16 @@
     font-size: 25px;
   }
 
-  .comment_box {
+  .userCommentBox {
     margin-bottom: 30px;
+    font-size: 25px;
+    display: flex;
+    margin: 20px;
+  }
+
+  .userName {
+    margin-right: 20px;
+    font-weight: bold;
   }
 
   .comment_bar {
@@ -196,7 +204,16 @@
     outline: none;
   }
 
-  .ripple_button {
+  .ripple_button_on {
+    color: #0095f6;
+    background-color: #ffffff;
+    border: none;
+
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .ripple_button_off {
     color: #b3dffc;
     background-color: #ffffff;
     border: none;
