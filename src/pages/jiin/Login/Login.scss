@@ -25,7 +25,6 @@
       border-radius: 10px;
       margin-top: 20px;
       background-color: #27c4f5;
-      // opacity: 0.5;
       color: #fff;
       font-weight: 500;
     }
@@ -45,22 +44,4 @@
       color: #000;
     }
   }
-  //   .newLogin {
-  //     @include flex(space-around, flex-end);
-  //     .title {
-  //       background-color: purple;
-  //       color: $textColor;
-  //     }
-  //     .article {
-  //       background-color: green;
-  //       color: $textColor;
-  //       &:hover {
-  //         width: 200px;
-  //         background-color: blue;
-  //       }
-  //       &_children {
-  //         background-color: powderblue;
-  //       }
-  //     }
-  //   }
 }
