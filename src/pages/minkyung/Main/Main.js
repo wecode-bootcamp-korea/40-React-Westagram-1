@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
+import Comment from './Comment';
 
 const MinkyungMain = () => {
+  const [comment, setComment] = useState('');
+  console.log(comment);
+  //input에서 댓글 값 받기
+  const onChange = e => setComment(e.target.value);
+  //input에서 받은 댓글 값 배열에 넣기
+  const [commentBox, setCommentBox] = useState([]);
+  const onSubmit = e => {
+    e.preventDefault();
+    if (comment === '') {
+      return;
+    }
+    setCommentBox(commentValueList => [...commentValueList, comment]);
+    setComment('');
+  };
+  //Enter key 등록
+  const handleOnKeyPress = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      onSubmit();
+    }
+  };
+
   return (
     <>
       <div>
@@ -44,7 +67,7 @@ const MinkyungMain = () => {
                 />
               </div>
               <span className="saveIcon">
-                <img src="images/minkyung/save-instagram.png" />
+                <img src="images/minkyung/save-instagram.png" alt="저장" />
               </span>
             </div>
             <div className="feedReactExp">
@@ -59,18 +82,32 @@ const MinkyungMain = () => {
             <div className="commentLine">
               <ul className="commentList">
                 <li>
-                  <span className="commentId">old_n_newyork</span>
+                  <span className="commentId1">old_n_newyork</span>
                   <span>곰돌이를 먹다니 잔인해!</span>
                 </li>
+                {commentBox.map((value, index) => (
+                  <li key={index} style={{ listStyleType: 'none' }}>
+                    <span className="commentId">cute_gyuri</span> {value}
+                  </li>
+                ))}
+                <form onSubmit={onSubmit}>
+                  <input
+                    type="text"
+                    className="commentSpace"
+                    placeholder="댓글 달기..."
+                    value={comment}
+                    onChange={onChange}
+                    onKeypress={handleOnKeyPress}
+                  />
+                  <button
+                    type="button"
+                    className="commentBtn"
+                    onClick={onSubmit}
+                  >
+                    게시
+                  </button>
+                </form>
               </ul>
-              <input
-                type="text"
-                className="commentSpace"
-                placeholder="댓글 달기..."
-              />
-              <button type="button" className="commentBtn">
-                게시
-              </button>
             </div>
           </section>
         </div>
@@ -82,10 +119,10 @@ const MinkyungMain = () => {
               </span>
               <ul class="dropdown-content">
                 <li href="#">
-                  <img src="images/minkyung/user.png" />
+                  <img src="images/minkyung/user.png" alt="그림1" />
                 </li>
                 <li href="#">
-                  <img src="images/minkyung/save-instagram.png" />
+                  <img src="images/minkyung/save-instagram.png" alt="그림2" />
                 </li>
                 <li href="#">
                   <img src="images/settings.png" />
@@ -192,5 +229,4 @@ const MinkyungMain = () => {
     </>
   );
 };
-
 export default MinkyungMain;
