@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
+import Child from './Child';
 import './Main.scss';
-// import images from './bookmark.png';
-
-// const Main = () => {
-
-//   return (
-//     <>
-//     <h1>여기는 메인 페이지 입니다.</h1>
-//     </>
-//   );
-// };
-// export default Main;
 
 function InstaGnb() {
   return (
@@ -80,18 +70,11 @@ function FeedMain() {
 }
 
 function FeedBottom() {
-  const [account, setAccount] = useState('');
+  let nextId = 0;
 
-  const newAccount = () => {
-    return (
-      <li>
-        <span className="boldName">neceosecius</span>
-        <span>ok🤟👉🥰⚡✍️</span>
-        {/* <span className="heartAdd"></span>
-  <span className="delete"></span> */}
-      </li>
-    );
-  };
+  const [name, setName] = useState('');
+  const [artists, setArtists] = useState([]);
+
   return (
     <div className="feedBottom">
       <div className="userClickSection">
@@ -136,9 +119,10 @@ function FeedBottom() {
           <li>
             <span className="boldName">neceosecius</span>
             <span>ok🤟👉🥰⚡✍️</span>
-            {/* <span className="heartAdd"></span>
-        <span className="delete"></span> */}
+            <span className="heartAdd">❤️</span>
+            <span className="delete">❌</span>
           </li>
+          <Child pet={artists} />
         </ul>
       </div>
       <div className="userComment">
@@ -146,13 +130,20 @@ function FeedBottom() {
           className="commentPush grey"
           type="text"
           placeholder="댓글 달기..."
-          onChange={e => {
-            setAccount(e.target.value);
-            let newAccount = [...account];
-            newAccount = setAccount;
-          }}
+          value={name}
+          onChange={e => setName(e.target.value)}
         />
-        <button className="submitPush" type="submit" onClick={newAccount}>
+        <button
+          className="submitPush"
+          type="submit"
+          onClick={() => {
+            setName('');
+            artists.push({
+              id: nextId++,
+              name: name,
+            });
+          }}
+        >
           게시
         </button>
       </div>
