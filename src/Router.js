@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+// Nav
+import Nav from './components/Nav/Nav';
+
 // 곽민경의 컴포넌트
 import MinkyungLogin from './pages/minkyung/Login/Login';
 import MinkyungMain from './pages/minkyung/Main/Main';
@@ -20,6 +23,7 @@ import JiinMain from './pages/jiin/Main/Main';
 const Router = () => {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/login-minkyung" element={<MinkyungLogin />} />
         <Route path="/main-minkyung" element={<MinkyungMain />} />
