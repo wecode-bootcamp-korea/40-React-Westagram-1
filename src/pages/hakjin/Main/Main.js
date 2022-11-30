@@ -20,7 +20,7 @@ function HakjinMain() {
 
   return (
     <>
-      <nav className="header">
+      {/* <nav className="header">
         <div id="header_box">
           <div id="elements">
             <img
@@ -58,7 +58,7 @@ function HakjinMain() {
             />
           </div>
         </div>
-      </nav>
+      </nav> */}
       <main className="main">
         <div id="feeds">
           <article id="article">

@@ -5,7 +5,7 @@ const CommentList = props => {
     <div className="userCommentBox">
       <p className="userName">{props.userName}</p>
       <div className="userComment">{props.userComment}</div>
-      <p className="userHeart" />
+      {/* <p className="userHeart" /> */}
     </div>
   );
 };

@@ -1,23 +1,19 @@
 import React from 'react';
-import './Login.scss';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import './Login.scss';
 
 function HakjinLogin() {
   const navigate = useNavigate();
 
-  const [id, setid] = useState('');
-  const saveUserid = e => {
-    setid(e.target.value);
-    // console.log(e.target.value);
+  const [inputValues, setinputValues] = useState({ email: '', password: '' });
+  const saveinputValues = event => {
+    const { name, value } = event.target;
+    setinputValues({ ...inputValues, [name]: value });
   };
 
-  const [pw, setpw] = useState('');
-  const saveUserpw = e => {
-    setpw(e.target.value);
-    // console.log(e.target.value);
-  };
-  const buttonUse = id.includes('@') && pw.length >= 5;
+  const buttonUse =
+    inputValues.email.includes('@') && inputValues.password.length >= 5;
   const buttonAble = buttonUse ? false : true;
   const buttonColor = buttonUse ? 'able' : 'disable';
   return (
@@ -28,15 +24,17 @@ function HakjinLogin() {
         <input
           className="login_text"
           id="email"
+          name="email"
           type="text"
-          onChange={saveUserid}
+          onChange={saveinputValues}
           placeholder="전화번호, 사용자 이름 또는 이메일"
         />
         <input
           className="login_text"
           id="password"
+          name="password"
           type="password"
-          onChange={saveUserpw}
+          onChange={saveinputValues}
           placeholder="비밀번호"
         />
         <button
