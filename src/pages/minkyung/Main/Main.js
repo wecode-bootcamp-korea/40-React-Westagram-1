@@ -9,7 +9,7 @@ const MinkyungMain = () => {
   const onChange = e => setComment(e.target.value);
   //input에서 받은 댓글 값 배열에 넣기
   const [commentBox, setCommentBox] = useState([]);
-  const onSubmit = e => {
+  const commentSubmit = e => {
     e.preventDefault();
     if (comment === '') {
       return;
@@ -21,7 +21,7 @@ const MinkyungMain = () => {
   const handleOnKeyPress = e => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      onSubmit();
+      commentSubmit();
     }
   };
 
@@ -78,7 +78,8 @@ const MinkyungMain = () => {
               맛있어
             </p>
           </div>
-          <section className="user-comment">
+          <Comment />
+          {/* <section className="user-comment">
             <div className="commentLine">
               <ul className="commentList">
                 <li>
@@ -90,7 +91,7 @@ const MinkyungMain = () => {
                     <span className="commentId">cute_gyuri</span> {value}
                   </li>
                 ))}
-                <form onSubmit={onSubmit}>
+                <form onSubmit={commentSubmit}>
                   <input
                     type="text"
                     className="commentSpace"
@@ -102,14 +103,14 @@ const MinkyungMain = () => {
                   <button
                     type="button"
                     className="commentBtn"
-                    onClick={onSubmit}
+                    onClick={commentSubmit}
                   >
                     게시
                   </button>
                 </form>
               </ul>
             </div>
-          </section>
+          </section> */}
         </div>
         <div className="main-right">
           <div className="personalProfile">
