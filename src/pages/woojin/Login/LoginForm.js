@@ -21,34 +21,10 @@ function LoginForm() {
     setPassword(event.target.value);
   };
 
-  console.log(email);
   // button validation
-  const conditionOfInput = email.indexOf('@') !== -1 && password.length >= 5;
-  let classOfButton = conditionOfInput ? 'active' : null;
+  const disabled =
+    email.indexOf('@') !== -1 && password.length >= 5 ? null : 'disabled';
 
-  // set alert when values wrong
-  const contentsOfAlert = {
-    noId: '이메일을 입력해주세요',
-    reId: '올바른 이메일 주소가 아닙니다.',
-    noPw: '비밀번호를 입력해주세요.',
-    rePw: '올바른 비밀번호가 아닙니다.',
-    login: 'Welcome!',
-  };
-
-  const eventAlert = () => {
-    if (email.length === 0) {
-      alert(contentsOfAlert.noId);
-    } else if (email.indexOf('@') === -1) {
-      alert(contentsOfAlert.reId);
-    } else if (password.length === 0) {
-      alert(contentsOfAlert.noPw);
-    } else if (password.length < 5) {
-      alert(contentsOfAlert.rePw);
-    } else {
-      alert(contentsOfAlert.login);
-      goToMain();
-    }
-  };
   // JSX
   return (
     <>
@@ -68,7 +44,7 @@ function LoginForm() {
         value={password}
         onChange={saveUserPassword}
       />
-      <button id="loginBtn" className={classOfButton} onClick={eventAlert}>
+      <button id="loginBtn" disabled={disabled} onClick={goToMain}>
         로그인
       </button>
     </>

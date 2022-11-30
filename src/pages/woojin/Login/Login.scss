@@ -63,23 +63,21 @@
       height: 30px;
       margin: 8px auto;
       background-color: rgb(0, 149, 246);
-      opacity: 0.3;
+      opacity: 1;
       border: none;
       border-radius: 4px;
       color: white;
 
       &:hover {
-        cursor: default;
-      }
-    }
-
-    /* login button - active state */
-    #loginBtn.active {
-      background-color: rgb(0, 149, 246);
-      opacity: 1;
-
-      &:hover {
         cursor: pointer;
+      }
+
+      &:disabled {
+        opacity: 0.3;
+
+        &:hover {
+          cursor: default;
+        }
       }
     }
 
