@@ -30,8 +30,7 @@ function Comments() {
   };
 
   // change color(validation) post button
-  const postButtonActive =
-    text.length > 0 ? 'addCommentButton active' : 'addCommentButton';
+  const postButtonActive = text.length > 0 ? 'active' : null;
 
   // JSX
   return (
@@ -58,7 +57,10 @@ function Comments() {
             onKeyDown={addCommentKeydownEvent}
           />
         </div>
-        <button className={postButtonActive} onClick={checkExistText}>
+        <button
+          className={`addCommentButton ${postButtonActive}`}
+          onClick={checkExistText}
+        >
           게시
         </button>
       </section>

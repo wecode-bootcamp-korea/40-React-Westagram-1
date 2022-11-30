@@ -1,6 +1,10 @@
 import React from 'react';
 
 function RecommendationAside({ userList }) {
+  const randomNums = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+  const viewRecommendationList = userList.splice([0], [5]);
   return (
     <>
       <div className="recommendationTitleLine">
@@ -10,7 +14,7 @@ function RecommendationAside({ userList }) {
         </a>
       </div>
       <div className="nonScrollBox">
-        {userList.map(user => {
+        {viewRecommendationList.map(user => {
           return (
             <div className="cellOfAside" key={user.id}>
               <div className="flexRaw">
@@ -25,7 +29,9 @@ function RecommendationAside({ userList }) {
                   <a href="" className="profileNameForm">
                     {user.userID}
                   </a>
-                  <div className="profileSubTextForm">회원님을 위한 추천</div>
+                  <div className="profileSubTextForm">
+                    wecode_님 외 {randomNums(1, 10)}명이 팔로우합니다
+                  </div>
                 </div>
               </div>
               <button className="asideButtons">팔로우</button>

@@ -13,66 +13,9 @@ button {
   border: none;
 }
 
-/* navigator */
-.navigator {
-  @include flexBetween;
-  border-bottom: $main_box_border;
-
-  .navImages {
-    @include setSize(24px, 24px);
-  }
-
-  .navButton {
-    border: none;
-    padding: 0;
-    background-color: $main_button_background_color;
-  }
-
-  /* navigator -left section */
-  .navLeftSection {
-    @include flexBetween;
-    margin: 15px 0 15px 50px;
-
-    .WestagramTitle {
-      margin: 0;
-      color: black;
-      font-size: $main_logo_size;
-      @include westagramLogo;
-      text-decoration: none;
-    }
-  }
-  /* navigator - middle section (search bar) */
-  .navMiddleSection {
-    .searchBar {
-      @include setSize(200px, 29px);
-      border: $main_box_border;
-      border-radius: 3px;
-      background-color: $main_button_background_color;
-      text-align: center;
-
-      &::-webkit-input-placeholder {
-        background-image: url('../../../assets/woojin/Main/magnifier.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: 35%;
-      }
-    }
-  }
-  /* navigator - right section */
-  .navRightSection {
-    @include flexBetween;
-    margin: 15px 50px 15px 0;
-
-    .navButton {
-      margin: 0 10px;
-    }
-  }
-}
-
 /* main */
 #mainOfMain {
   @include flexRawCenter;
-  margin-bottom: 50px;
 
   button {
     background-color: $main-button-background-color;
@@ -80,7 +23,7 @@ button {
   
   /* article */
   article {
-    @include setSize(auto, 950px);
+    @include setSize(auto, 80vh);
     margin: {
       top: 12px;
       right: 40px;
@@ -149,15 +92,36 @@ button {
         @include flexBetween;
 
         button {
+          @include setSize(30px, 30px);
           margin: {
-            right: 15px;
+            right: 10px;
             bottom: 10px;
           }
+        }
+
+        .clickAnimation {
+          animation: click 0.2s;
+        
+         @keyframes click {
+          0% {
+            @include setSize(24px, 24px)
+          }
+          40% {
+            @include setSize(30px, 30px);
+          }
+          100% {
+            @include setSize(24px, 24px)
+          }
+         }
         }
       }
 
       .bookMarkButtonArticle {
-        margin-right: 0 !important;
+        @include setSize(30px, 30px);
+        margin: {
+          right: 0 !important;
+          bottom: 10px;
+        }
       }
     }
     /* article - like section */
@@ -219,9 +183,8 @@ button {
           line-height: 18px;
         }
 
-        .deleteCommentButton {
+        .deleteCommentButtonImage {
           @include setSize(10px, 10px);
-          background-image: url('../../../assets/woojin/Main/bin.png');
         }
       }
     }
