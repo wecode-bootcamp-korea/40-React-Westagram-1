@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Child from './Child';
+import Footer from './Footer';
 import './Main.scss';
 
 function InstaGnb() {
@@ -152,14 +153,26 @@ function FeedBottom() {
 }
 
 function Feed() {
+  const [userInfoList, setUserInfoList] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/userInfoList.json')
+      .then(response => response.json())
+      .then(result => setUserInfoList(result));
+  }, []);
   return (
-    <div className="feeds">
-      <article>
-        <FeedTop />
-        <FeedMain />
-        <FeedBottom />
-      </article>
-    </div>
+    <>
+      Feed
+      {userInfoList.map(userInfoList => {
+        return (
+          <article>
+            <FeedTop />
+            <FeedMain />
+            <FeedBottom />
+          </article>
+        );
+      })}
+    </>
   );
 }
 
@@ -292,6 +305,7 @@ function MainRight() {
           </div>
         </li>
       </ul>
+      <Footer />
     </div>
   );
 }

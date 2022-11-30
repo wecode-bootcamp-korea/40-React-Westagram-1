@@ -30,7 +30,7 @@ function UserBtn() {
   };
 
   return (
-    <div className="userButton">
+    <div className="login">
       <input
         id="userIdValue"
         type="text"

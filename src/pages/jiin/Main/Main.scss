@@ -279,6 +279,19 @@ main {
         }
       }
     }
+    footer {
+      ul {
+        margin-top: 10px;
+        li {
+          float: left;
+          line-height: 20px;
+          &:not(:last-of-type)::after {
+            content: '·';
+            margin: 5px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -348,6 +361,9 @@ main {
         }
       }
       .suggestionSection {
+        display: none;
+      }
+      footer {
         display: none;
       }
     }
