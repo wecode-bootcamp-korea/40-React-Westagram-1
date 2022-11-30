@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Main.scss';
 import Feeds from './Feeds';
 import AsideBottom from './AsideBottom';
+import StoryAside from './StoryAside';
+import RecommendationAside from './RecommendationAside';
 
 function WoojinMain() {
   const [userList, setUserList] = useState([]);
@@ -73,7 +75,7 @@ function WoojinMain() {
                 <img
                   id="myProfile"
                   alt="my profile logo"
-                  src="/images/woojin/MainPosts/flower.jpg"
+                  src="/images/woojin/UserProfileimages/flower.jpg"
                 />
               </a>
               <a className="profileNameForm" href=" ">
@@ -84,170 +86,11 @@ function WoojinMain() {
           </div>
           {/* main-right story section */}
           <section>
-            <div className="storyTitleLine">
-              <div className="asideTitle">스토리</div>
-              <a href=" " className="seeAllOfList">
-                모두보기
-              </a>
-            </div>
             {/* main-right - story box to scroll */}
-            <div className="storyScrollBox">
-              <div className="cellOfAside">
-                <a href="#">
-                  <img
-                    className="profileImageForm"
-                    alt="first stroy logo"
-                    src="/images/woojin/MainPosts/beer.jpg"
-                  />
-                </a>
-                <div>
-                  <a href="" className="profileNameForm">
-                    we_are_beer
-                  </a>
-                  <div className="profileSubTextForm">5분 전</div>
-                </div>
-              </div>
-
-              <div className="cellOfAside">
-                <a href="">
-                  <img
-                    className="profileImageForm"
-                    alt="second stroy logo"
-                    src="/images/woojin/MainPosts/cake.jpg"
-                  />
-                </a>
-                <div>
-                  <a href=" " className="profileNameForm">
-                    we_are_cake
-                  </a>
-                  <div className="profileSubTextForm">19분 전</div>
-                </div>
-              </div>
-
-              <div className="cellOfAside">
-                <a href="">
-                  <img
-                    className="profileImageForm"
-                    alt="third stroy logo"
-                    src="/images/woojin/MainPosts/code.jpg"
-                  />
-                </a>
-                <div>
-                  <a href="" className="profileNameForm">
-                    we_are_coder
-                  </a>
-                  <div className="profileSubTextForm">2시간 전</div>
-                </div>
-              </div>
-
-              <div className="cellOfAside">
-                <a href="">
-                  <img
-                    className="profileImageForm"
-                    alt="fourth stroy logo"
-                    src="/images/woojin/MainPosts/flower.jpg"
-                  />
-                </a>
-                <div>
-                  <a href=" " className="profileNameForm">
-                    woojin_sub
-                  </a>
-                  <div className="profileSubTextForm">20시간 전</div>
-                </div>
-              </div>
-            </div>
+            <StoryAside userList={userList} />
           </section>
           {/* main-right - recommendation */}
-          <div className="recommendationTitleLine">
-            <div className="asideTitle">회원님을 위한 추천</div>
-            <a href="" className="seeAllOfList">
-              모두보기
-            </a>
-          </div>
-          {/* main-right - recommendation box */}
-          <div className="nonScrollBox">
-            <div className="cellOfAside">
-              <div className="flexRaw">
-                <a href="">
-                  <img
-                    className="profileImageForm"
-                    alt="first recommendation friend"
-                    src="/images/woojin/MainPosts/flower.jpg"
-                  />
-                </a>
-                <div>
-                  <a href="" className="profileNameForm">
-                    wecode_bootcamp
-                  </a>
-                  <div className="profileSubTextForm">회원님을 위한 추천</div>
-                </div>
-              </div>
-              <button className="asideButtons">팔로우</button>
-            </div>
-
-            <div className="cellOfAside">
-              <div className="flexRaw">
-                <a href="">
-                  <img
-                    className="profileImageForm"
-                    alt="second recommendation friend"
-                    src="/images/woojin/MainPosts/beach.jpg"
-                  />
-                </a>
-                <div>
-                  <a href="" className="profileNameForm">
-                    wecode_Frontend
-                  </a>
-                  <div className="profileSubTextForm">
-                    wecode님 외 1명이 팔로우합니다
-                  </div>
-                </div>
-              </div>
-              <button className="asideButtons">팔로우</button>
-            </div>
-
-            <div className="cellOfAside">
-              <div className="flexRaw">
-                <a href="">
-                  <img
-                    className="profileImageForm"
-                    alt="third recommendation friend"
-                    src="/images/woojin/MainPosts/coffee.jpg"
-                  />
-                </a>
-                <div>
-                  <a href="" className="profileNameForm">
-                    wecode_Backend
-                  </a>
-                  <div className="profileSubTextForm">
-                    wecode님 외 4명이 팔로우합니다
-                  </div>
-                </div>
-              </div>
-              <button className="asideButtons">팔로우</button>
-            </div>
-
-            <div className="cellOfAside">
-              <div className="flexRaw">
-                <a href="">
-                  <img
-                    className="profileImageForm"
-                    alt="fourth recommendation friend"
-                    src="/images/woojin/MainPosts/rabbits.jpg"
-                  />
-                </a>
-                <div>
-                  <a href="" className="profileNameForm">
-                    wecode_Fullstack
-                  </a>
-                  <div className="profileSubTextForm">
-                    wecode님이 팔로우합니다
-                  </div>
-                </div>
-              </div>
-              <button className="asideButtons">팔로우</button>
-            </div>
-          </div>
+          <RecommendationAside userList={userList} />
           {/* main-right - infos */}
           <AsideBottom />
         </aside>

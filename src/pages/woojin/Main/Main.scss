@@ -109,6 +109,7 @@ button {
           @include setSize(32px, 32px);
           margin-right: 12px;
           border-radius: 50%;
+          object-fit: cover;
         }
 
         .profileNameForm {
@@ -131,6 +132,7 @@ button {
 
       .imageOfArticle {
         @include setSize(480px, 590px);
+        object-fit: cover;
       }
     }
     /* article - buttons */
@@ -292,6 +294,7 @@ button {
           @include setSize(56px, 56px);
           margin-right: 12px;
           border-radius: 50%;
+          object-fit: cover;
         }
 
         .profileNameForm {
@@ -340,6 +343,10 @@ button {
     margin-bottom: 30px;
     overflow: auto;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     .cellOfAside {
       @include flexRawWithoutCenter;
       @include setSize(auto, 48px);
@@ -349,6 +356,7 @@ button {
         @include setSize(32px, 32px);
         margin-right: 12px;
         border-radius: 50%;
+        object-fit: cover;
       }
 
       .profileNameForm {
@@ -399,6 +407,7 @@ button {
         @include setSize(32px, 32px);
         margin-right: 12px;
         border-radius: 50%;
+        object-fit: cover;
       }
 
       .profileNameForm {

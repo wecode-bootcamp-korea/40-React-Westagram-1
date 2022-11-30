@@ -60,18 +60,14 @@ const Feeds = ({ userList }) => {
             </section>
             <section className="likeSection">
               <div className="likeText">
-                좋아요 <span id="NumOfLike">163347</span>개
+                좋아요 <span id="NumOfLike">{user.countOfLike}</span>개
               </div>
             </section>
             <section className="contentSection">
               <a href="#" className="profileNameForm">
                 {user.userID}
               </a>
-              <span className="contentText">
-                어디서나 매우 흔하게 보이는 다년생초로서 바닥에 딱 붙어서 꽃대
-                대여섯 개가 쏙 올라온다. 톱니 모양의 잎새와 눈에 확 띄는 노란
-                꽃이 인상적이다.
-              </span>
+              <span className="contentText">{user.content}</span>
               <span className="seeMoreContent">... 더 보기</span>
             </section>
             <Comments />
