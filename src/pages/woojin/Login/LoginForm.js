@@ -21,8 +21,9 @@ function LoginForm() {
     setPassword(event.target.value);
   };
 
+  console.log(email);
   // button validation
-  const conditionOfInput = email.indexOf('@') && password.length >= 5;
+  const conditionOfInput = email.indexOf('@') !== -1 && password.length >= 5;
   let classOfButton = conditionOfInput ? 'active' : null;
 
   // set alert when values wrong
@@ -48,7 +49,6 @@ function LoginForm() {
       goToMain();
     }
   };
-
   // JSX
   return (
     <>
