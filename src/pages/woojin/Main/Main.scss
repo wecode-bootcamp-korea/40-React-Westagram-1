@@ -72,6 +72,7 @@ button {
 /* main */
 #mainOfMain {
   @include flexRawCenter;
+  margin-bottom: 50px;
 
   button {
     background-color: $main-button-background-color;
@@ -199,6 +200,7 @@ button {
       border-top: $main_box_border;
 
       li {
+        @include flexBetween;
         margin: 5px 0;
         list-style-type: none;
 
@@ -208,6 +210,11 @@ button {
           font-size: $main-font-size;
           font-weight: $bold-font-weight;
           line-height: 18px;
+        }
+
+        .deleteCommentButton {
+          @include setSize(10px, 10px);
+          background-image: url('../../../assets/woojin/Main/bin.png');
         }
       }
     }
@@ -420,7 +427,20 @@ button {
 
   /* aside - information letters */
   .infoLetters {
-    margin-bottom: 16px;
+    @include setSize(280px, auto);
+    color: $main-info-letter-color;
+    font-size: $sub-font-size;
+    line-height: 15px;
+
+    .infoWords {
+      &:not(:last-child)::after {
+        content: '•';
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 16px;
     color: $main-info-letter-color;
     font-size: $sub-font-size;
   }

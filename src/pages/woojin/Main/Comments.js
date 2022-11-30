@@ -13,7 +13,7 @@ function Comments() {
   // add click event for upload comments
   const addCommentClickEvent = () => {
     setText('');
-    setList([...list, { id: 'woojin', content: text }]);
+    setList([...list, { name: 'woojin', content: text }]);
   };
 
   // check exist of text in input field
@@ -38,7 +38,7 @@ function Comments() {
     <>
       <section>
         <ul className="commentListSection">
-          <LineOfComment list={list} />
+          <LineOfComment list={list} setList={setList} />
         </ul>
       </section>
       <div className="uploadDate">1일 전</div>

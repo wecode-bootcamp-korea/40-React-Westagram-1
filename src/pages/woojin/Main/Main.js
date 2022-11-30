@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.scss';
 import Comments from './Comments';
+import AsideBottom from './AsideBottom';
 
 function WoojinMain() {
   return (
@@ -311,12 +312,7 @@ function WoojinMain() {
             </div>
           </div>
           {/* main-right - infos */}
-          <div className="infoLetters">
-            소개, 도움말, 홍보 센터, API, 채용 정보,
-            <br />
-            개인정보처리방침, 약관, 위치, 언어
-          </div>
-          <div className="infoLetters">2022 WESTAGRAM FROM WECODE</div>
+          <AsideBottom />
         </aside>
       </main>
     </>

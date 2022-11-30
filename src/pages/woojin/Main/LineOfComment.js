@@ -5,8 +5,10 @@ const LineOfComment = ({ list }) => {
     <>
       {list.map((list, i) => (
         <li key={i}>
-          <span className="profileNameForm">{list.id}</span>
-          {list.content}
+          <div>
+            <span className="profileNameForm">{list.id}</span>
+            {list.content}
+          </div>
         </li>
       ))}
     </>
