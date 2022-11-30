@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Main.scss';
 import Feeds from './Feeds';
 import AsideBottom from './AsideBottom';
 
 function WoojinMain() {
+  const [userList, setUserList] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/woojin/userData.json', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => {
+        setUserList(data);
+      });
+  }, []);
+
   return (
     <>
       {/* navigator */}
@@ -54,7 +64,7 @@ function WoojinMain() {
       </nav>
       {/* main page */}
       <main id="mainOfMain">
-        <Feeds />
+        <Feeds userList={userList} />
         <aside>
           {/* main-right profile section */}
           <div id="myProfileInfo">

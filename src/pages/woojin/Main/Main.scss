@@ -80,13 +80,23 @@ button {
   
   /* article */
   article {
+    @include setSize(auto, 950px);
     margin: {
       top: 12px;
       right: 40px;
     }
-    border: $main-box-border;
-    border-radius: 8px;
     font-size: $main-font-size;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .feeds {
+      margin-bottom: 30px;
+      border: $main-box-border;
+      border-radius: 8px;
+    }
 
     /* article - header */
     header {
@@ -121,11 +131,6 @@ button {
 
       .imageOfArticle {
         @include setSize(480px, 590px);
-        background-image: url('../../../assets/woojin/Main/flower_article.jpg');
-        background: {
-          size: cover;
-          position: 50%;
-        }
       }
     }
     /* article - buttons */
