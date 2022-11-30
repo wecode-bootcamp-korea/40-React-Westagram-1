@@ -4,7 +4,7 @@ import Comment from './Comment';
 
 const MinkyungMain = () => {
   const [comment, setComment] = useState('');
-  console.log(comment);
+  // console.log(comment);
   //input에서 댓글 값 받기
   const onChange = e => setComment(e.target.value);
   //input에서 받은 댓글 값 배열에 넣기
@@ -16,13 +16,6 @@ const MinkyungMain = () => {
     }
     setCommentBox(commentValueList => [...commentValueList, comment]);
     setComment('');
-  };
-  //Enter key 등록
-  const handleOnKeyPress = e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      commentSubmit();
-    }
   };
 
   return (
@@ -70,67 +63,16 @@ const MinkyungMain = () => {
                 <img src="images/minkyung/save-instagram.png" alt="저장" />
               </span>
             </div>
-            <div className="feedReactExp">
-              <div className="ReactUserId"></div>
+            <div className="feedArticle">
+              <span>cute_gyuri</span> 8000원이나 주고 산 밀크티. 곰돌이는 맛있어
+              엄마곰 아빠곰 애기곰 아빠곰은 뚱뚱해 그래서 먹었지
             </div>
-            <p className="feedArticle">
-              <strong>cute_gyuri</strong> 8000원이나 주고 산 밀크티. 곰돌이는
-              맛있어
-            </p>
           </div>
           <Comment />
-          {/* <section className="user-comment">
-            <div className="commentLine">
-              <ul className="commentList">
-                <li>
-                  <span className="commentId1">old_n_newyork</span>
-                  <span>곰돌이를 먹다니 잔인해!</span>
-                </li>
-                {commentBox.map((value, index) => (
-                  <li key={index} style={{ listStyleType: 'none' }}>
-                    <span className="commentId">cute_gyuri</span> {value}
-                  </li>
-                ))}
-                <form onSubmit={commentSubmit}>
-                  <input
-                    type="text"
-                    className="commentSpace"
-                    placeholder="댓글 달기..."
-                    value={comment}
-                    onChange={onChange}
-                    onKeypress={handleOnKeyPress}
-                  />
-                  <button
-                    type="button"
-                    className="commentBtn"
-                    onClick={commentSubmit}
-                  >
-                    게시
-                  </button>
-                </form>
-              </ul>
-            </div>
-          </section> */}
         </div>
         <div className="main-right">
           <div className="personalProfile">
-            <div className="dropdown">
-              <span className="dropBtn">
-                <img src="images/minkyung/dog.jpg" alt="profileImage" />
-              </span>
-              <ul class="dropdown-content">
-                <li href="#">
-                  <img src="images/minkyung/user.png" alt="그림1" />
-                </li>
-                <li href="#">
-                  <img src="images/minkyung/save-instagram.png" alt="그림2" />
-                </li>
-                <li href="#">
-                  <img src="images/settings.png" />
-                </li>
-                <li href="#">로그아웃</li>
-              </ul>
-            </div>
+            <img src="images/minkyung/dog.jpg" alt="profileImage" />
             <div className="personalId">
               cute_gyuri
               <div id="personalName">maltipoo | 규리</div>
@@ -138,14 +80,14 @@ const MinkyungMain = () => {
           </div>
           <div className="story">
             <div className="storyBar">
-              스토리 <span>모두 보기</span>
+              <div>스토리</div>
+              <div className="everyone">모두 보기</div>
             </div>
             <ul className="storyPeople">
               <li className="storyContents">
                 <img alt="1st-profile" src="images/minkyung/profile1.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>r_u_running</strong>
-                  <br />
                   16분 전
                 </div>
               </li>
@@ -153,7 +95,6 @@ const MinkyungMain = () => {
                 <img alt="2nd-profile" src="images/minkyung/profile2.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>cantdo_kendo</strong>
-                  <br />
                   30분 전
                 </div>
               </li>
@@ -161,7 +102,6 @@ const MinkyungMain = () => {
                 <img alt="3rd-profile" src="images/minkyung/profile3.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>cat_ssg_win</strong>
-                  <br />
                   49분 전
                 </div>
               </li>
@@ -169,7 +109,6 @@ const MinkyungMain = () => {
                 <img alt="4th-profile" src="images/minkyung/profile4.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>chocooooooo</strong>
-                  <br />
                   1시간 전
                 </div>
               </li>
@@ -177,7 +116,6 @@ const MinkyungMain = () => {
                 <img alt="5th-profile" src="images/minkyung/profile5.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>madoo_love</strong>
-                  <br />
                   3시간 전
                 </div>
               </li>
@@ -185,36 +123,39 @@ const MinkyungMain = () => {
                 <img alt="6th-profile" src="images/minkyung/profile6.jpeg" />
                 <div className="ProfilesInfo">
                   <strong>old_n_newyork</strong>
-                  <br />
                   20시간 전
                 </div>
               </li>
             </ul>
             <div className="recommendation">
               <div className="recommendationBar">
-                회원님을 위한 추천<span className="everyone">모두 보기</span>
+                <div>회원님을 위한 추천</div>
+                <div className="everyone">모두 보기</div>
               </div>
               <ul className="recommendationPeople">
-                <li className="storyContents">
+                <li className="recoContents">
                   <img alt="7th-profile" src="images/minkyung/profile7.jpeg" />
-                  <strong>tuna_sushi</strong>
-                  <br />
-                  <p className="recoExp1">r_u_running님 외...</p>
-                  {/* <span className="blueFollow">팔로우</span> */}
+                  <div className="recoColumn">
+                    <strong>tuna_sushi</strong>
+                    <p className="recoExp">r_u_running님 외...</p>
+                  </div>
+                  <span className="blueFollow">팔로우</span>
                 </li>
-                <li className="storyContents">
+                <li className="recoContents">
                   <img alt="8th-profile" src="images/minkyung/profile8.jpeg" />
-                  <strong>ducklingduckduck</strong>
-                  <br />
-                  <p className="recoExp2">old_n_newyork님...</p>
-                  {/* <span className="blueFollow">팔로우</span> */}
+                  <div className="recoColumn">
+                    <strong>ducklingduckduck</strong>
+                    <p className="recoExp">old_n_newyork님...</p>
+                  </div>
+                  <span className="blueFollow">팔로우</span>
                 </li>
-                <li className="storyContents">
+                <li className="recoContents">
                   <img alt="9th-profile" src="images/minkyung/profile9.jpeg" />
-                  <strong>5am_cafe</strong>
-                  <br />
-                  <p className="recoExp3">chocooooooo님 외 ...</p>
-                  {/* <span className="blueFollow">팔로우</span> */}
+                  <div className="recoColumn">
+                    <strong>5am_cafe</strong>
+                    <p className="recoExp">chocooooooo님 외 ...</p>
+                  </div>
+                  <span className="blueFollow">팔로우</span>
                 </li>
               </ul>
             </div>

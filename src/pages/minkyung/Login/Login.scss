@@ -1,19 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import '../Login/variables.scss';
-main {
-  @include flex;
-  width: 100vw;
-  // height: 100vh;
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-}
 
-.wrap {
-  background-color: $westaGray;
+.loginPage {
+  @include flexSort('center', 'center');
+  flex-direction: column;
+  text-align: center;
+  background-color: $lightGray;
 }
 
 .squareForm {
+  @include flexSort('center', 'center');
+  flex-direction: column;
+  text-align: center;
   margin: 50px auto;
   background-color: white;
   border: 1px solid $westaGray;
