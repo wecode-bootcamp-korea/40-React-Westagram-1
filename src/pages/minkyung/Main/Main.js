@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 import './Main.scss';
 import Comment from './Comment';
+import WestaAside from './WestaAside';
 
 const MinkyungMain = () => {
-  const [comment, setComment] = useState('');
-  // console.log(comment);
-  //input에서 댓글 값 받기
-  const onChange = e => setComment(e.target.value);
-  //input에서 받은 댓글 값 배열에 넣기
-  const [commentBox, setCommentBox] = useState([]);
-  const commentSubmit = e => {
-    e.preventDefault();
-    if (comment === '') {
-      return;
-    }
-    setCommentBox(commentValueList => [...commentValueList, comment]);
-    setComment('');
-  };
-
+  // const [comment, setComment] = useState('');
+  // // console.log(comment);
+  // //input에서 댓글 값 받기
+  // const onChange = e => setComment(e.target.value);
+  // //input에서 받은 댓글 값 배열에 넣기
+  // const [commentBox, setCommentBox] = useState([]);
+  // const commentSubmit = e => {
+  //   e.preventDefault();
+  //   if (comment === '') {
+  //     return;
+  //   }
+  //   setCommentBox(commentValueList => [...commentValueList, comment]);
+  //   setComment('');
+  // };
+  // useEffect(() => {
+  //   fetch('/data/FeedMockData.json')
+  //     .then(response => response.json())
+  //     .then(result => setFeedDataList(result));
+  // }, []);
+  const [feedDataList, setFeedDataList] = useState([]);
   return (
     <>
       <div>
@@ -69,6 +75,12 @@ const MinkyungMain = () => {
             </div>
           </div>
           <Comment />
+          <div className="feeds">
+            {/* {feedDataList.map((result, i) => {
+              const feed = feedDataList[i];
+              return <Feed key={i} feed={feed} />;
+            })} */}
+          </div>
         </div>
         <div className="main-right">
           <div className="personalProfile">
@@ -160,10 +172,8 @@ const MinkyungMain = () => {
               </ul>
             </div>
             <div className="contract">
-              westagram 정보 지원 홍보 센터 API <br />
-              채용 정보 개인정보처리방침 약관 <br />
-              디렉터리 프로필 해시태그 언어 <br />
-              <br />© 2022 WESTAGRAM FROM WECODE
+              <br /> © 2022 WESTAGRAM FROM WECODE
+              <WestaAside />
             </div>
           </div>
         </div>

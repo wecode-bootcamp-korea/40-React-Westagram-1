@@ -16,13 +16,6 @@ const Comment = () => {
     setCommentBox(commentValueList => [...commentValueList, comment]);
     setComment('');
   };
-  //Enter key 등록
-  const handleOnKeyPress = e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      commentSubmit();
-    }
-  };
 
   //JSX
   return (
@@ -41,7 +34,6 @@ const Comment = () => {
               placeholder="댓글 달기..."
               value={comment}
               onChange={onChange}
-              onKeypress={handleOnKeyPress}
             />
             <button
               type="button"

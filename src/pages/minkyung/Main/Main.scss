@@ -3,6 +3,7 @@
 
 * {
   white-space: nowrap;
+  background-color: white;
 }
 
 /* navigation */
@@ -16,6 +17,7 @@
   padding-bottom: 10px;
   align-items: center;
   border-bottom: 1px solid rgb(219, 219, 219);
+  background-color: white;
   img {
     width: 30px;
   }
@@ -58,6 +60,7 @@
   .rightSideIcons {
     margin-left: 100px;
     float: left;
+    background-color: none;
     img {
       width: 25px;
       margin: 10px;
@@ -178,15 +181,6 @@ main {
     font-weight: bold;
   }
 }
-
-// .delete {
-//   float: right;
-//   margin-top: -10px;
-//   margin-right: -20px;
-//   cursor: pointer;
-//   border: none;
-//   background: none;
-// }
 
 .main-right {
   display: flex;
@@ -349,8 +343,13 @@ ul {
 
 .contract {
   margin: 10px;
+  margin-bottom: 40px;
   color: rgb(199, 199, 199);
   font-size: 12px;
+  ul li {
+    float: left;
+    margin-left: 5px;
+  }
 }
 
 /* 미디어 쿼리 */

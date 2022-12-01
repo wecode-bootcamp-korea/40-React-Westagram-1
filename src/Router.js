@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // 곽민경의 컴포넌트
 import MinkyungLogin from './pages/minkyung/Login/Login';
 import MinkyungMain from './pages/minkyung/Main/Main';
+import Signup from './pages/minkyung/Login/Signup';
 
 // 임우진의 컴포넌트
 import WoojinLogin from './pages/woojin/Login/Login';
@@ -23,6 +24,7 @@ const Router = () => {
       <Routes>
         <Route path="/login-minkyung" element={<MinkyungLogin />} />
         <Route path="/main-minkyung" element={<MinkyungMain />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login-woojin" element={<WoojinLogin />} />
         <Route path="/main-woojin" element={<WoojinMain />} />
         <Route path="/login-hakjin" element={<HakjinLogin />} />

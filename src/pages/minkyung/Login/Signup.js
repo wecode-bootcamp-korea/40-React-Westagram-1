@@ -3,11 +3,7 @@ import './Login.scss';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-const MinkyungLogin = () => {
-  const navigate = useNavigate();
-  const goToMain = () => {
-    navigate('/minkyung-main');
-  };
+const Signup = () => {
   const [id, setId] = useState('');
   const saveUserId = event => {
     setId(event.target.value);
@@ -22,7 +18,8 @@ const MinkyungLogin = () => {
   const btnAble = isValid ? false : true;
 
   const handleClick = () => {
-    fetch('https://10.58.52.143:3000/auth/signin', {
+    console.log(id, pw);
+    fetch('https://10.58.52.248:3000/auth/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({ email: id, password: pw }),
@@ -56,16 +53,14 @@ const MinkyungLogin = () => {
             required
           />
           <div className="validLogin">
-            <Link to="/main-minkyung">
-              <button
-                type="button"
-                className={btnColor} //조건을 만족하면 파란색 버튼
-                disabled={btnAble} //조건을 만족하지 못하면 버튼 자체를 비활성화
-                onClick={handleClick}
-              >
-                로그인
-              </button>
-            </Link>
+            <button
+              type="button"
+              className={btnColor} //조건을 만족하면 파란색 버튼
+              disabled={btnAble} //조건을 만족하지 못하면 버튼 자체를 비활성화
+              onClick={handleClick}
+            >
+              회원가입
+            </button>
           </div>
         </form>
         <div className="forgotPassword">
@@ -76,4 +71,4 @@ const MinkyungLogin = () => {
   );
 };
 
-export default MinkyungLogin;
+export default Signup;

@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import '../Login/variables.scss';
+* {
+  background-color: $lightGray;
+}
 
 .loginPage {
   @include flexSort('center', 'center');
   flex-direction: column;
+  margin-top: 50px;
   text-align: center;
   background-color: $lightGray;
 }
 
 .squareForm {
-  @include flexSort('center', 'center');
-  flex-direction: column;
-  text-align: center;
   margin: 50px auto;
   background-color: white;
   border: 1px solid $westaGray;
@@ -26,6 +27,7 @@
 
   h1 {
     color: black;
+    background-color: white;
   }
 
   #loginForm {
@@ -34,6 +36,7 @@
     width: 537px;
     margin-left: 30px;
     margin-right: 30px;
+    background-color: white;
 
     #user-id,
     #user-password {
@@ -47,8 +50,12 @@
     }
   }
   .validLogin {
+    background-color: white;
+    a {
+      background-color: white;
+    }
     .login_btn {
-      background-color: rgba(0, 149, 246);
+      background-color: rgb(0, 149, 246);
       opacity: 0.5;
       height: 50px;
       width: 500px;
@@ -63,7 +70,7 @@
       color: white;
     }
     .login_btn_blue {
-      background-color: rgba(0, 149, 246);
+      background-color: rgb(0, 149, 246);
       opacity: 1;
       height: 50px;
       width: 500px;
@@ -81,9 +88,11 @@
   .forgotPassword {
     margin-bottom: 50px;
     font-size: 19px;
+    background-color: white;
     a {
       text-decoration: none;
       color: rgb(0, 5, 84);
+      background-color: white;
     }
   }
 }
