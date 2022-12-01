@@ -73,65 +73,69 @@
 main {
   display: grid;
   grid-template-columns: 600px 300px;
-  column-gap: 50px;
+  column-gap: 70px;
   background-color: #fafafa;
   align-items: center;
   justify-content: center;
-  /* feed */
-  .feeds {
-    margin-top: 60px;
-    margin-left: 70px;
+}
+/* feed */
+.feeds {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-left: 70px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  background-color: white;
+}
+
+/* 유저 아이콘 */
+.userIcon {
+  display: flex;
+  flex-direction: row;
+  img {
+    margin: 10px;
+    width: 35px;
     border: 1px solid rgb(219, 219, 219);
-    border-radius: 5px;
-    background-color: white;
-    .feedArticle {
-      margin: 20px;
-      white-space: break-spaces;
-      line-height: 1.2em;
-      span {
-        font-weight: bold;
-      }
-    }
-    #articleImage img {
-      width: 528px;
-    }
-    /* 유저 아이콘 */
-    #userIcon {
-      display: flex;
-      flex-direction: row;
-      img {
-        margin: 10px;
-        width: 35px;
-        border: 1px solid rgb(219, 219, 219);
-        border-radius: 50%;
-      }
-      .userName {
-        margin-left: 5px;
-        margin-top: 17px;
-        font-size: 15px;
-        font-weight: bold;
-      }
-      .moreInfo {
-        margin-top: 5px;
-        margin-left: 370px;
-        font-size: 25px;
-      }
-    }
-    //feed icons
-    .feedReactions {
-      display: flex;
-      flex-direction: row;
-      img {
-        width: 40px;
-        padding-left: 15px;
-        padding-top: 10px;
-      }
-      .saveIcon img {
-        width: 40px;
-        padding-top: 10px;
-        margin-left: 350px;
-      }
-    }
+    border-radius: 50%;
+  }
+  .userName {
+    margin-left: 5px;
+    margin-top: 17px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .moreInfo {
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 25px;
+  }
+}
+//feed icons
+.feedReactions {
+  display: flex;
+  flex-direction: row;
+  img {
+    width: 40px;
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+  .saveIcon img {
+    width: 40px;
+    padding-top: 10px;
+    margin-left: 350px;
+  }
+}
+.articleImage {
+  width: 100%;
+}
+.feedArticle {
+  margin: 20px;
+  white-space: break-spaces;
+  line-height: 1.2em;
+  span {
+    font-weight: bold;
   }
 }
 
@@ -141,7 +145,8 @@ main {
   .commentLine {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid rgb(199, 199, 199);
+    border-top: 0.5px solid rgb(199, 199, 199);
+
     margin-bottom: 20px;
     padding-bottom: 20px;
     ul li {
@@ -171,7 +176,7 @@ main {
     margin-right: 20px;
     margin-top: 15px;
     padding: 10px;
-    width: 420px;
+    width: 430px;
     border: none;
   }
   .commentBtn {
@@ -187,6 +192,7 @@ main {
   flex-direction: column;
   margin-top: 60px;
   margin-bottom: auto;
+  background-color: #fafafa;
 
   .personalProfile {
     display: flex;

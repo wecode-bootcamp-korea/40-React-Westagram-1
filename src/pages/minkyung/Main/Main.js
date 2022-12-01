@@ -1,29 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Main.scss';
+
 import Comment from './Comment';
 import WestaAside from './WestaAside';
+import Feed from './Feed';
 
 const MinkyungMain = () => {
-  // const [comment, setComment] = useState('');
-  // // console.log(comment);
-  // //input에서 댓글 값 받기
-  // const onChange = e => setComment(e.target.value);
-  // //input에서 받은 댓글 값 배열에 넣기
-  // const [commentBox, setCommentBox] = useState([]);
-  // const commentSubmit = e => {
-  //   e.preventDefault();
-  //   if (comment === '') {
-  //     return;
-  //   }
-  //   setCommentBox(commentValueList => [...commentValueList, comment]);
-  //   setComment('');
-  // };
+  // const [feeds, setFeeds] = useState([]);
+
   // useEffect(() => {
-  //   fetch('/data/FeedMockData.json')
+  //   fetch('/data/userInfoList.json', { method: 'GET' })
   //     .then(response => response.json())
-  //     .then(result => setFeedDataList(result));
-  // }, []);
-  const [feedDataList, setFeedDataList] = useState([]);
+  //     .then(result => {
+  //       setFeeds(result.userList);
+  //     });
+  // });
   return (
     <>
       <div>
@@ -47,40 +38,41 @@ const MinkyungMain = () => {
       </div>
       <main>
         <div className="feeds">
-          <div className="article">
-            <div id="userIcon">
-              <img src="images/minkyung/dog.jpg" alt="User Image" />
+          <div className="user_profile">
+            <div className="userIcon">
+              <img
+                src="images/minkyung/dog.jpg"
+                alt="User Image"
+                className="userIcon"
+              />
               <div className="userName">cute_gyuri</div>
               <div className="moreInfo">...</div>
             </div>
-            <div id="articleImage">
-              <img src="images/minkyung/article.jpeg" alt="Article Image" />
+            <img
+              src="images/minkyung/article.jpeg"
+              className="articleImage"
+              alt="Article Image"
+            />
+          </div>
+          <div className="feedReactions">
+            <div className="feedRightIcons">
+              <img src="images/minkyung/red_heart.png" alt="heart-icon" />
+              <img src="images/minkyung/bubble-chat.png" alt="comment-icon" />
+              <img
+                src="images/minkyung/direct-instagram.png"
+                alt="direct-message"
+              />
             </div>
-            <div className="feedReactions">
-              <div className="feedRightIcons">
-                <img src="images/minkyung/red_heart.png" alt="heart-icon" />
-                <img src="images/minkyung/bubble-chat.png" alt="comment-icon" />
-                <img
-                  src="images/minkyung/direct-instagram.png"
-                  alt="direct-message"
-                />
-              </div>
-              <span className="saveIcon">
-                <img src="images/minkyung/save-instagram.png" alt="저장" />
-              </span>
-            </div>
-            <div className="feedArticle">
-              <span>cute_gyuri</span> 8000원이나 주고 산 밀크티. 곰돌이는 맛있어
-              엄마곰 아빠곰 애기곰 아빠곰은 뚱뚱해 그래서 먹었지
-            </div>
+            <span className="saveIcon">
+              <img src="images/minkyung/save-instagram.png" alt="저장" />
+            </span>
+          </div>
+          <div className="feedArticle">
+            <span>cute_gyuri</span> 8000원이나 주고 산 밀크티. 곰돌이는 맛있어
+            엄마곰 아빠곰 애기곰 아빠곰은 뚱뚱해 그래서 먹었지
           </div>
           <Comment />
-          <div className="feeds">
-            {/* {feedDataList.map((result, i) => {
-              const feed = feedDataList[i];
-              return <Feed key={i} feed={feed} />;
-            })} */}
-          </div>
+          <Feed />
         </div>
         <div className="main-right">
           <div className="personalProfile">

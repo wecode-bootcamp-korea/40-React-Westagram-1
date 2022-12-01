@@ -22,10 +22,6 @@ const Comment = () => {
     <section className="user-comment">
       <div className="commentLine">
         <ul className="commentList">
-          <li>
-            <span className="commentId1">old_n_newyork</span>
-            <span>곰돌이를 먹다니 잔인해!</span>
-          </li>
           <ListofComment commentBox={commentBox} />
           <form onSubmit={commentSubmit}>
             <input
