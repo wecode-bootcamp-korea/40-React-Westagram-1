@@ -16,6 +16,7 @@ import HakjinMain from './pages/hakjin/Main/Main';
 // 임지인의 컴포넌트
 import JiinLogin from './pages/jiin/Login/Login';
 import JiinMain from './pages/jiin/Main/Main';
+import LoginJoin from './pages/jiin/Join/Join';
 // import 한 컴포넌트에 대한 경로를 각각 설정해줍니다.
 const Router = () => {
   return (
@@ -29,6 +30,7 @@ const Router = () => {
         <Route path="/main-hakjin" element={<HakjinMain />} />
         <Route path="/login-jiin" element={<JiinLogin />} />
         <Route path="/main-jiin" element={<JiinMain />} />
+        <Route path="/join-jiin" element={<LoginJoin />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Login.scss';
+import './Join.scss';
 
 function Subject() {
-  return <h1>Instagram</h1>;
+  return <h1>sign up</h1>;
 }
 
 function UserBtn() {
@@ -23,10 +22,24 @@ function UserBtn() {
   const buttonColor = changeColor ? 'active' : 'un_active';
   const disabledOn = changeColor ? false : true;
 
-  const navigate = useNavigate();
-
-  const moveMain = e => {
-    navigate('/main-jiin');
+  const joinUp = () => {
+    if (changeColor) {
+      fetch('http://10.58.52.102:3000/auth/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify({
+          email: userIdValue,
+          password: userPwValue,
+        }),
+      })
+        //요청
+        .then(response => response.json())
+        .then(data => console.log(data));
+    } else {
+      alert('올바른 값을 입력하세요');
+    }
   };
 
   return (
@@ -45,20 +58,10 @@ function UserBtn() {
       />
       <button
         id="userBtn"
-        type="submit"
+        type="button"
         disabled={disabledOn}
-        onChange={changeColor}
         className={buttonColor}
-        onClick={moveMain}
-      >
-        <p>로그인</p>
-      </button>
-      <button
-        id="userJoinBtn"
-        type="submit"
-        onClick={() => {
-          navigate('/join-jiin');
-        }}
+        onClick={joinUp}
       >
         <p>회원가입</p>
       </button>
@@ -66,18 +69,13 @@ function UserBtn() {
   );
 }
 
-function LostPassword() {
-  return <div className="lostPwText">비밀번호를 잊으셨나요?</div>;
-}
-
-function JiinLogin() {
+function LoginJoin() {
   return (
     <form id="instaWrap">
       <Subject />
       <UserBtn />
-      <LostPassword />
     </form>
   );
 }
 
-export default JiinLogin;
+export default LoginJoin;

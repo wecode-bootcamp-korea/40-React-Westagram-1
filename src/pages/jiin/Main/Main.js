@@ -42,137 +42,129 @@ function InstaGnb() {
   );
 }
 
-function FeedTop() {
+function FeedParents() {
+  const [userInfoList, setUserInfoList] = useState([]); // userInfoList를 useState로 빈 배열..?로 만들어서 , setUserInfoList로 다시 새로운 값 할당
+
+  useEffect(() => {
+    fetch('/data/userInfoList.json') // Mock Data 경로 전달
+      .then(response => response.json()) // 위의 fetch 호출 이후 매개변수 response에 JSON형태의 데이터가 들어옴
+      .then(result => setUserInfoList(result)); // set함수로 result를 받아 mock data를 저장하였다
+  }, []);
+
   return (
-    <div className="feedTop">
-      <div className="feedTopLeft">
-        <div className="feedTopImg">
-          <img src="./images/jiin/insta_profile.png" alt="userImg" />
-        </div>
-        <div className="feedTopUser">
-          <p>wecode_bootcamp</p>
-        </div>
-      </div>
-      <div className="feedTopRight">
-        <div className="feedMore">
-          <img src="./images/jiin/more.png" alt="더보기" />
-        </div>
-      </div>
-    </div>
+    <>
+      {' '}
+      {/* useEffect는 나중에 실행되고 return 부터 실행된다 */}
+      {/* userInfoList를 map 으로 하나씩 방문하며 화면(UI)을 그려준다 = Feed 태그인 전체 UI를 그려주고 useEffect로 json정보를 넣어준다*/}
+      {/* userInfoList로 받은 mock data값을 map으로 돌려 info 라는 json의 {} 한덩어리씩 인자를 받아 반복 생성되는 Feed 태그의 key 값의 id , userInfo={info} <- json의 한덩어리*/}
+      {userInfoList.map(info => (
+        <Feed key={info.id} userInfo={info} />
+      ))}{' '}
+    </>
   );
 }
 
-function FeedMain() {
-  return (
-    <div className="feedMain">
-      <img src="./images/jiin/insta_profile.png" alt="main profile" />
-    </div>
-  );
-}
-
-function FeedBottom() {
+// 컴포넌트의 속성값을 의미, 부모 컴포넌트로부터 전달받은 데이터를 지니고 있는 객체
+// 부모 컴포넌트에서 내려준 info 값을 userInfo 인자로 받는다
+function Feed({ userInfo }) {
   let nextId = 0;
 
   const [name, setName] = useState('');
   const [artists, setArtists] = useState([]);
 
   return (
-    <div className="feedBottom">
-      <div className="userClickSection">
-        <div>
-          <div className="userLike BottomImg">
-            <img src="./images/jiin/heart.png" alt="heart" />
+    <article className="feed">
+      <div className="feedTop">
+        <div className="feedTopLeft">
+          <div className="feedTopImg">
+            <img src="./images/jiin/insta_profile.png" alt="userImg" />
           </div>
-          <div className="chat BottomImg">
-            <img src="./images/jiin/chat.png" alt="chat" />
-          </div>
-          <div className="userShare BottomImg">
-            <img src="./images/jiin/upload.png" alt="share" />
+          <div className="feedTopUser">
+            <p>wecode_bootcamp</p>
           </div>
         </div>
-        <div className="userBookmarkSection">
-          <div className="userBookmark BottomImg">
-            <img src="./images/jiin/bookmark.png" alt="bookmark" />
+        <div className="feedTopRight">
+          <div className="feedMore">
+            <img src="./images/jiin/more.png" alt="더보기" />
           </div>
         </div>
       </div>
-      <div className="userWrite">
-        <div className="userProfileLike">
-          <div className="insta_profileImg">
-            <img src="./images/jiin/insta_profile.png" alt="insta_profile" />
+      <div className="feedMain">
+        <img src={userInfo.image} alt="main profile" />
+      </div>
+      <div className="feedBottom">
+        <div className="userClickSection">
+          <div>
+            <div className="userLike BottomImg">
+              <img src="./images/jiin/heart.png" alt="heart" />
+            </div>
+            <div className="chat BottomImg">
+              <img src="./images/jiin/chat.png" alt="chat" />
+            </div>
+            <div className="userShare BottomImg">
+              <img src="./images/jiin/upload.png" alt="share" />
+            </div>
           </div>
-          <div className="likeCountNum">
-            aineworld님 외 <div className="name"> 0 </div> 명이 좋아합니다
+          <div className="userBookmarkSection">
+            <div className="userBookmark BottomImg">
+              <img src="./images/jiin/bookmark.png" alt="bookmark" />
+            </div>
           </div>
         </div>
-        <ul className="userWriting">
-          <li>
-            <span className="boldName">canon_mj</span>
-            <span>
-              위워크에서 진행한 베이킹 클래스...
-              <a href=" " className="grey">
-                더보기
-              </a>
-            </span>
-          </li>
-        </ul>
-        <ul className="followersWrite">
-          <li>
-            <span className="boldName">neceosecius</span>
-            <span>ok🤟👉🥰⚡✍️</span>
-            <span className="heartAdd">❤️</span>
-            <span className="delete">❌</span>
-          </li>
-          <Child pet={artists} />
-        </ul>
+        <div className="userWrite">
+          <div className="userProfileLike">
+            <div className="insta_profileImg">
+              <img src="./images/jiin/insta_profile.png" alt="insta_profile" />
+            </div>
+            <div className="likeCountNum">
+              aineworld님 외 <div className="name"> 0 </div> 명이 좋아합니다
+            </div>
+          </div>
+          <ul className="userWriting">
+            <li>
+              <span className="boldName">canon_mj</span>
+              <span>
+                위워크에서 진행한 베이킹 클래스...
+                <a href=" " className="grey">
+                  더보기
+                </a>
+              </span>
+            </li>
+          </ul>
+          <ul className="followersWrite">
+            <li>
+              <span className="boldName">{userInfo.name}</span>
+              <span>ok🤟👉🥰⚡✍️</span>
+              <span className="heartAdd">❤️</span>
+              <span className="delete">❌</span>
+            </li>
+            <Child pet={artists} />
+          </ul>
+        </div>
+        <div className="userComment">
+          <input
+            className="commentPush grey"
+            type="text"
+            placeholder="댓글 달기..."
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+          <button
+            className="submitPush"
+            type="submit"
+            onClick={() => {
+              setName('');
+              artists.push({
+                id: nextId++,
+                name: name,
+              });
+            }}
+          >
+            게시
+          </button>
+        </div>
       </div>
-      <div className="userComment">
-        <input
-          className="commentPush grey"
-          type="text"
-          placeholder="댓글 달기..."
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-        <button
-          className="submitPush"
-          type="submit"
-          onClick={() => {
-            setName('');
-            artists.push({
-              id: nextId++,
-              name: name,
-            });
-          }}
-        >
-          게시
-        </button>
-      </div>
-    </div>
-  );
-}
-
-function Feed() {
-  const [userInfoList, setUserInfoList] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/userInfoList.json')
-      .then(response => response.json())
-      .then(result => setUserInfoList(result));
-  }, []);
-  return (
-    <>
-      Feed
-      {userInfoList.map(userInfoList => {
-        return (
-          <article>
-            <FeedTop />
-            <FeedMain />
-            <FeedBottom />
-          </article>
-        );
-      })}
-    </>
+    </article>
   );
 }
 
@@ -313,7 +305,9 @@ function MainRight() {
 function MainJoin() {
   return (
     <main>
-      <Feed />
+      <div className="feeds">
+        <FeedParents />
+      </div>
       <MainRight />
     </main>
   );

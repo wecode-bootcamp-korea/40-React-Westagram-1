@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/common.scss';
 @import './Main_variable.scss';
 
 .insta_gnb {
@@ -61,132 +62,140 @@ main {
   justify-content: center;
   padding: 50px 20px;
   .feeds {
-    width: 500px;
-    border: 1px solid #ddd;
-    margin-right: 20px;
-    .feedTop {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 8px 8px 12px;
-      .feedTopLeft {
-        display: flex;
-        .feedTopImg {
-          width: 30px;
-          margin-right: 20px;
-          img {
-            width: 100%;
-            border-radius: 20px;
-          }
-        }
-        .feedTopUser {
-          p {
-            line-height: 30px;
-            font-size: 14px;
-          }
-        }
+    display: flex;
+    flex-direction: column;
+    .feed {
+      width: 500px;
+      border: 1px solid #ddd;
+      margin-top: 50px;
+      margin-right: 20px;
+      &:first-child {
+        margin-top: 0;
       }
-      .feedTopRight {
-        .feedMore {
-          width: 24px;
-          img {
-            width: 100%;
-          }
-        }
-      }
-    }
-    .feedMain {
-      img {
-        width: 100%;
-      }
-    }
-    .feedBottom {
-      padding: 20px;
-      .userClickSection {
+      .feedTop {
         display: flex;
         justify-content: space-between;
-        div {
+        align-items: center;
+        padding: 8px 8px 8px 12px;
+        .feedTopLeft {
           display: flex;
-          .BottomImg {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-            :last-child {
-              margin-right: 0;
+          .feedTopImg {
+            width: 30px;
+            margin-right: 20px;
+            img {
+              width: 100%;
+              border-radius: 20px;
+            }
+          }
+          .feedTopUser {
+            p {
+              line-height: 30px;
+              font-size: 14px;
             }
           }
         }
-      }
-      .userWrite {
-        font-size: 14px;
-        .userProfileLike {
-          display: flex;
-          align-items: center;
-          margin-top: 20px;
-          .insta_profileImg {
-            width: 30px;
-            height: 30px;
-            margin-right: 8px;
-            border-radius: 50%;
-            overflow: hidden;
+        .feedTopRight {
+          .feedMore {
+            width: 24px;
             img {
               width: 100%;
             }
           }
-          .likeCountNum {
-            display: flex;
-            line-height: 30px;
-            margin-right: 10px;
-          }
         }
-        .userWriting {
+      }
+      .feedMain {
+        img {
+          width: 100%;
+        }
+      }
+      .feedBottom {
+        padding: 20px;
+        .userClickSection {
           display: flex;
-          margin-top: 10px;
-          li {
-            .boldName {
-              font-weight: 600;
-              margin-right: 5px;
-            }
-            .grey {
-              color: gray;
-              text-decoration: none;
+          justify-content: space-between;
+          div {
+            display: flex;
+            .BottomImg {
+              width: 24px;
+              height: 24px;
+              margin-right: 10px;
+              :last-child {
+                margin-right: 0;
+              }
             }
           }
         }
-        .followersWrite {
-          li {
-            .boldName {
-              font-weight: 600;
-              margin-right: 5px;
-            }
-            .heartAdd {
-              width: 15px;
+        .userWrite {
+          font-size: 14px;
+          .userProfileLike {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            .insta_profileImg {
+              width: 30px;
+              height: 30px;
+              margin-right: 8px;
+              border-radius: 50%;
+              overflow: hidden;
               img {
                 width: 100%;
               }
             }
-            .delete {
-              float: right;
+            .likeCountNum {
+              display: flex;
+              line-height: 30px;
+              margin-right: 10px;
+            }
+          }
+          .userWriting {
+            display: flex;
+            margin-top: 10px;
+            li {
+              .boldName {
+                font-weight: 600;
+                margin-right: 5px;
+              }
+              .grey {
+                color: gray;
+                text-decoration: none;
+              }
+            }
+          }
+          .followersWrite {
+            li {
+              .boldName {
+                font-weight: 600;
+                margin-right: 5px;
+              }
+              .heartAdd {
+                width: 15px;
+                img {
+                  width: 100%;
+                }
+              }
+              .delete {
+                float: right;
+              }
             }
           }
         }
-      }
-      .userComment {
-        display: flex;
-        margin-top: 40px;
-        input {
-          border: none;
-          background: none;
-        }
-        .commentPush {
-          width: 90%;
-        }
-        button {
-          border: none;
-          background: none;
-        }
-        .submitPush {
-          width: 10%;
+        .userComment {
+          display: flex;
+          margin-top: 40px;
+          input {
+            border: none;
+            background: none;
+          }
+          .commentPush {
+            width: 90%;
+          }
+          button {
+            border: none;
+            background: none;
+          }
+          .submitPush {
+            width: 10%;
+          }
         }
       }
     }
@@ -312,8 +321,12 @@ main {
     padding: 20px;
     .feeds {
       width: 100%;
-      margin-top: 20px;
+      .feed {
+        width: 100%;
+        margin-top: 20px;
+      }
     }
+
     .main-right {
       display: flex;
       width: 100%;
