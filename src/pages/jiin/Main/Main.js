@@ -43,34 +43,36 @@ function InstaGnb() {
 }
 
 function FeedParents() {
-  const [userInfoList, setUserInfoList] = useState([]); // userInfoList를 useState로 빈 배열..?로 만들어서 , setUserInfoList로 다시 새로운 값 할당
+  const [userInfoList, setUserInfoList] = useState([]); //
 
   useEffect(() => {
-    fetch('/data/userInfoList.json') // Mock Data 경로 전달
-      .then(response => response.json()) // 위의 fetch 호출 이후 매개변수 response에 JSON형태의 데이터가 들어옴
-      .then(result => setUserInfoList(result)); // set함수로 result를 받아 mock data를 저장하였다
+    fetch('/data/userInfoList.json')
+      .then(response => response.json())
+      .then(result => setUserInfoList(result));
   }, []);
 
   return (
     <>
-      {' '}
-      {/* useEffect는 나중에 실행되고 return 부터 실행된다 */}
-      {/* userInfoList를 map 으로 하나씩 방문하며 화면(UI)을 그려준다 = Feed 태그인 전체 UI를 그려주고 useEffect로 json정보를 넣어준다*/}
-      {/* userInfoList로 받은 mock data값을 map으로 돌려 info 라는 json의 {} 한덩어리씩 인자를 받아 반복 생성되는 Feed 태그의 key 값의 id , userInfo={info} <- json의 한덩어리*/}
       {userInfoList.map(info => (
         <Feed key={info.id} userInfo={info} />
-      ))}{' '}
+      ))}
     </>
   );
 }
 
-// 컴포넌트의 속성값을 의미, 부모 컴포넌트로부터 전달받은 데이터를 지니고 있는 객체
-// 부모 컴포넌트에서 내려준 info 값을 userInfo 인자로 받는다
 function Feed({ userInfo }) {
   let nextId = 0;
 
   const [name, setName] = useState('');
   const [artists, setArtists] = useState([]);
+
+  const feedAddComments = () => {
+    setName('');
+    artists.push({
+      id: nextId++,
+      name: name,
+    });
+  };
 
   return (
     <article className="feed">
@@ -152,13 +154,7 @@ function Feed({ userInfo }) {
           <button
             className="submitPush"
             type="submit"
-            onClick={() => {
-              setName('');
-              artists.push({
-                id: nextId++,
-                name: name,
-              });
-            }}
+            onClick={feedAddComments}
           >
             게시
           </button>

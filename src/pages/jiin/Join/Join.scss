@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import '../../../styles/common.scss';
 
-#instaWrap {
+.instaWrap {
   width: 500px;
   margin: 0 auto;
   padding: 50px 80px;
@@ -9,7 +9,7 @@
     text-align: center;
     font-family: 'Lobster', cursive;
   }
-  .login {
+  .JoinUserBtn {
     margin-top: 50px;
     input {
       display: block;

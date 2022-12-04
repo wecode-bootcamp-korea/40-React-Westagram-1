@@ -2,7 +2,7 @@
 @import '../../../styles/common.scss';
 @import './Login_variable.scss';
 
-#instaWrap {
+.instaWrap {
   width: 500px;
   margin: 0 auto;
   padding: 50px 80px;
@@ -10,7 +10,7 @@
     text-align: center;
     font-family: 'Lobster', cursive;
   }
-  .login {
+  .LoginUserBtn {
     margin-top: 50px;
     input {
       display: block;
