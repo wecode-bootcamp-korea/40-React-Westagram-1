@@ -1,7 +1,37 @@
 import React from 'react';
+import './Login.scss';
+import LoginForm from './LoginForm';
 
 function WoojinLogin() {
-  return <h1>Hello WoojinLogin</h1>;
+  console.log('new');
+  return (
+    <main id="mainOfLogin">
+      <section id="loginPage">
+        <h1>Westagram</h1>
+        <form>
+          <LoginForm />
+          <div id="divisionSection">
+            <div className="divisionLine" />
+            <span id="divisionText">또는</span>
+            <div className="divisionLine" />
+          </div>
+          <div>
+            <a href=" " id="facebookLink">
+              <img
+                src="/images/woojin/Login/facebook.png"
+                id="facebookLogo"
+                alt="facebook logo"
+              />
+              Facebook으로 로그인
+            </a>
+          </div>
+        </form>
+        <div id="searchPw">
+          <a href=" ">비밀번호를 잊으셨나요?</a>
+        </div>
+      </section>
+    </main>
+  );
 }
 
 export default WoojinLogin;

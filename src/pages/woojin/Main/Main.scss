@@ -1,0 +1,424 @@
+@import '../variable.scss';
+
+/* common style for anchor, button */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  padding: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+/* main */
+#mainOfMain {
+  @include flexRawCenter;
+
+  button {
+    background-color: $main-button-background-color;
+  }
+  
+  /* article */
+  article {
+    @include setSize(auto, 80vh);
+    margin: {
+      top: 12px;
+      right: 40px;
+    }
+    font-size: $main-font-size;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .feeds {
+      margin-bottom: 30px;
+      border: $main-box-border;
+      border-radius: 8px;
+    }
+
+    /* article - header */
+    header {
+      margin: 8px 4px 8px 12px;
+
+      .profileLink {
+        @include flexRawWithoutCenter;
+
+        .profileForm {
+          @include setSize(32px, 32px);
+          margin-right: 12px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .profileNameForm {
+          margin-right: 5px;
+          color: $main-text-color;
+          font-weight: $bold-font-weight;
+          line-height: 18px;
+        }
+
+        .profileSubTextForm {
+          color: $sub-text-color;
+          font-size: $sub-font-size;
+          line-height: 16px;
+        }
+      }
+    }
+    /* article - post image */
+    .imagePostSection {
+      @include flexRawCenter;
+
+      .imageOfArticle {
+        @include setSize(480px, 590px);
+        object-fit: cover;
+      }
+    }
+    /* article - buttons */
+    .buttonOfArticle {
+      @include flexBetween;
+      margin-top: 10px;
+      padding: 0 12px;
+
+      img {
+        @include setSize(24px, 24px);
+      }
+
+      .buttonLeft {
+        @include flexBetween;
+
+        button {
+          @include setSize(30px, 30px);
+          margin: {
+            right: 10px;
+            bottom: 10px;
+          }
+        }
+
+        .clickAnimation {
+          animation: click 0.2s;
+        
+         @keyframes click {
+          0% {
+            @include setSize(24px, 24px)
+          }
+          40% {
+            @include setSize(30px, 30px);
+          }
+          100% {
+            @include setSize(24px, 24px)
+          }
+         }
+        }
+      }
+
+      .bookMarkButtonArticle {
+        @include setSize(30px, 30px);
+        margin: {
+          right: 0 !important;
+          bottom: 10px;
+        }
+      }
+    }
+    /* article - like section */
+    .likeSection {
+      padding: 0 12px;
+      margin-bottom: 8px;
+
+      .likeText {
+        font-weight: $bold-font-weight;
+      }
+    }
+
+    /* article - content section */
+    .contentSection {
+      @include setSize(480px, auto);
+      padding: 0 12px;
+      margin: {
+        bottom: 8px;
+      }
+      text-align: justify;
+
+      .profileNameForm {
+        margin-right: 5px;
+        color: $main-text-color;
+        font-weight: $bold-font-weight;
+        line-height: 18px;
+      }
+
+      .contentText {
+        line-height: 20px;
+      }
+
+      .seeMoreContent {
+        display: none;
+        margin-left: 5px;
+        color: $sub-text-color;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    /* article - comments list -- hidden space */
+    .commentListSection {
+      margin: 0 12px;
+      border-top: $main_box_border;
+
+      li {
+        @include flexBetween;
+        margin: 5px 0;
+        list-style-type: none;
+
+        .profileNameForm {
+          margin-right: 5px;
+          color: $main-text-color;
+          font-size: $main-font-size;
+          font-weight: $bold-font-weight;
+          line-height: 18px;
+        }
+
+        .deleteCommentButtonImage {
+          @include setSize(10px, 10px);
+        }
+      }
+    }
+
+    /* article - uploaded date counter */
+    .uploadDate {
+      margin: 12px 0;
+      padding-left: 12px;
+      color: $sub-text-color;
+      font-size: $date-font-size;
+    }
+
+    /* article - comments input */
+    .commentSection {
+      @include flexBetween;
+      height: 49px;
+      padding: 0 12px;
+      border-top: $main-box-border;
+
+      .commentEmoji {
+        margin-right: 10px;
+        @include setSize(24px, 24px);
+      }
+
+      .addCommentText {
+        @include setSize(377px, 40px);
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .addCommentButton {
+        width: auto;
+        background-color: $main-button-background-color;
+        color: $button-blue-color;
+        opacity: 0.3;
+        font-weight: $bold-font-weight;
+
+        &.active {
+          opacity: 1;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  /* main-right */
+  aside {
+    font: {
+      size: $sub-font-size;
+      weight: $bold-font-weight;
+    }
+    /* aside - my profile info */
+    #myProfileInfo {
+      @include flexBetween;
+      @include setSize(100%, 66px);
+      margin: 16px 0 10px 0;
+      font-size: $main-font-size;
+
+      .profileImgAndName {
+        @include flexRawCenter;
+        align-items: center;
+
+        #myProfile {
+          @include setSize(56px, 56px);
+          margin-right: 12px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .profileNameForm {
+          margin-right: 5px;
+          color: $main-text-color;
+          font-weight: $bold-font-weight;
+          line-height: 18px;
+        }
+      }
+
+      .asideButtons {
+        @include setSize(auto, auto);
+        background-color: $main-button-background-color;
+        color: $button-blue-color;
+        font: {
+          size: $sub-font-size;
+          weight: $bold-font-weight;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }  
+
+  /* aside - story title */
+  .storyTitleLine {
+    @include flexBetween;
+    margin: 10px 0;
+
+    .asideTitle {
+      font-size: $main-font-size;
+      color: $sub-text-color;
+    }
+  
+    .seeAllOfList {
+      font-size: $main-font-size;
+      color: $main-text-color;
+    }
+  }
+  
+  /* aside - story box */
+  .storyScrollBox {
+    @include setSize(300px, 180px);
+    margin-bottom: 30px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cellOfAside {
+      @include flexRawWithoutCenter;
+      @include setSize(auto, 48px);
+      padding: 8px 0;
+
+      .profileImageForm {
+        @include setSize(32px, 32px);
+        margin-right: 12px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .profileNameForm {
+        margin-right: 5px;
+        color: $main-text-color;
+        font-weight: $bold-font-weight;
+        line-height: 18px;
+      }
+      
+      .profileSubTextForm {
+        color: $sub-text-color;
+        font-size: $sub-font-size;
+        line-height: 16px;
+      }
+    }
+  }
+
+  /* aside - recommendation title */
+  .recommendationTitleLine {
+    @include flexBetween;
+    margin: 10px 0;
+
+    .asideTitle {
+      font-size: $main-font-size;
+      color: $sub-text-color;
+    }
+  
+    .seeAllOfList {
+      font-size: $main-font-size;
+      color: $main-text-color;
+    }
+  }
+  /* aside - recommendation box */
+  .nonScrollBox {
+    margin-bottom: 30px;
+
+    .cellOfAside {
+      @include flexBetween;
+      @include setSize(auto, 48px);
+      padding: 8px 0;
+
+      .flexRaw {
+        @include flexRawWithoutCenter;
+        align-items: center;
+      }
+
+      .profileImageForm {
+        @include setSize(32px, 32px);
+        margin-right: 12px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .profileNameForm {
+        margin-right: 5px;
+        color: $main-text-color;
+        font-weight: $bold-font-weight;
+        line-height: 18px;
+      }
+      
+      .profileSubTextForm {
+        color: $sub-text-color;
+        font-size: $sub-font-size;
+        line-height: 16px;
+      }
+
+      .asideButtons {
+        @include setSize(auto, auto);
+        background-color: $main-button-background-color;
+        color: $button-blue-color;
+        font: {
+          size: $sub-font-size;
+          weight: $bold-font-weight;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  /* aside - information letters */
+  .infoLetters {
+    @include setSize(280px, auto);
+    color: $main-info-letter-color;
+    font-size: $sub-font-size;
+    line-height: 15px;
+
+    .infoWords {
+      &:not(:last-child)::after {
+        content: '•';
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 16px;
+    color: $main-info-letter-color;
+    font-size: $sub-font-size;
+  }
+}
