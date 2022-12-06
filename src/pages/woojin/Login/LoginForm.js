@@ -21,7 +21,25 @@ function LoginForm() {
     setPassword(event.target.value);
   };
 
-  // button validation
+  const clickEventHandler = () => {
+    fetch('http://10.58.52.105:8000/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.accessToken) {
+          localStorage.setItem('token', data.accessToken);
+          alert('환영합니다!');
+          navigate('/main-woojin');
+        }
+      });
+  };
+
   const disabled =
     email.indexOf('@') !== -1 && password.length >= 5 ? null : 'disabled';
 
@@ -44,7 +62,12 @@ function LoginForm() {
         value={password}
         onChange={saveUserPassword}
       />
-      <button id="loginBtn" disabled={disabled} onClick={goToMain}>
+      <button
+        id="loginBtn"
+        type="button"
+        disabled={disabled}
+        onClick={clickEventHandler}
+      >
         로그인
       </button>
     </>

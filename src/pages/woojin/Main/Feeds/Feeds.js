@@ -1,6 +1,7 @@
 import React from 'react';
 import Buttons from './Buttons';
 import Comments from './Comments/Comments';
+import Content from './Content';
 
 const Feeds = ({ userList }) => {
   return (
@@ -30,13 +31,7 @@ const Feeds = ({ userList }) => {
               />
             </section>
             <Buttons userList={user} />
-            <section className="contentSection">
-              <a href="#" className="profileNameForm">
-                {user.userID}
-              </a>
-              <span className="contentText">{user.content}</span>
-              <span className="seeMoreContent">... 더 보기</span>
-            </section>
+            <Content userList={user} />
             <Comments />
           </div>
         );
